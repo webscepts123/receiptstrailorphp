@@ -115,6 +115,12 @@ include_once("connection.php");
             table tr{
                 border:none;
             }
+
+
+            .none
+            {
+              border:none !important
+            }
             
            
 
@@ -167,14 +173,7 @@ include_once("connection.php");
           
             <br>
             <div class="container">
-                <div class="row">
-                   <p>Subject</p> 
-    
-                    </div>
-                    <div class="col">
-                     
-                    </div>
-                </div>
+               
   
         </div>
 	     
@@ -183,10 +182,10 @@ include_once("connection.php");
 	         
 	         <table>
 	             <tr>
-	               <th class="tdclass" style="width:10%;">#</th>
-                    <th class="tdclass" style="width:50%;">Item Description</th>
-                    <th class="tdclass" style="width:10%;">Qty</th>
-                    <th class="tdclass" style="width:10%;">Rate</th>
+	               <th class="tdclass" style="width:10%;">QTY</th>
+                    <th class="tdclass" style="width:10%;">Item </th>
+                    <th class="tdclass" style="width:10%;">Description</th>
+                    <th class="tdclass" style="width:10%;">Discount</th>
                     <th class="tdclass" style="width:10%;">Amount</th>
                    
 
@@ -206,7 +205,7 @@ include_once("connection.php");
                   echo "<tr>";
                      echo "<td  style='width:10%;'>"; 
                      echo $singleRow['productcode']; "</td>";
-                     echo "<td style='width:50%;'>"; 
+                     echo "<td style='width:10%;'>"; 
                      echo $singleRow['productname']; "</td>";
                      echo "<td style='width:10%;'>";
                      echo $singleRow['quantity']; "</td>";
@@ -432,6 +431,33 @@ include_once("connection.php");
               echo  "</tr>";
                         }
                 ?>
+
+                <tr>
+                  <td class="none"></td>
+                  <td class="none"></td>
+                  <td class="none"></td>
+                  <td class="none">Total</td>
+                  <td>LKR 1300</td>
+                  
+                </tr>
+
+                <tr>
+                  <td class="none"></td>
+                  <td class="none"></td>
+                  <td class="none"></td>
+                  <td class="none">Payment</td>
+                  <td>LKR 1300</td>
+                  
+                </tr>
+
+                <tr>
+                  <td class="none"></td>
+                  <td class="none"></td>
+                  <td class="none"></td>
+                  <td class="none">Due Balance</td>
+                  <td>LKR 1300</td>
+                  
+                </tr>
                 
 	        </table>
 	      

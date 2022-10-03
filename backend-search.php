@@ -1,15 +1,10 @@
 <?php
 /* Attempt MySQL server connection. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
-$databaseHost = 'localhost';
-$databaseName = 'receiptstailor_demo';
-$databaseUsername = 'receiptstailor_demo';
-$databasePassword = 'xCV(MrQQRvS5';
-
-$link = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName);
+include("connection.php");
  
 // Check connection
-if($link === false){
+if($mysqli === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
  
@@ -17,7 +12,7 @@ if(isset($_REQUEST["term"])){
     // Prepare a select statement
     $sql = "SELECT * FROM rentcustomer WHERE customername LIKE ?";
     
-    if($stmt = mysqli_prepare($link, $sql)){
+    if($stmt = mysqli_prepare($mysqli, $sql)){
         // Bind variables to the prepared statement as parameters
         mysqli_stmt_bind_param($stmt, "s", $param_term);
         
@@ -38,7 +33,7 @@ if(isset($_REQUEST["term"])){
                 echo "<p>No matches found</p>";
             }
         } else{
-            echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+            echo "ERROR: Could not able to execute $sql. " . mysqli_error($mysqli);
         }
     }
      
@@ -47,5 +42,5 @@ if(isset($_REQUEST["term"])){
 }
  
 // close connection
-mysqli_close($link);
+mysqli_close($mysqli);
 ?>

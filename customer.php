@@ -40,6 +40,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM orders ORDER BY id DESC");
       <th scope="col">Name</th>
       <th scope="col">Phone</th>
       <th scope="col">Due Date</th>
+      <th scope="col">Status</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -51,6 +52,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM orders ORDER BY id DESC");
 		echo "<td>".$res['name']."</td>";
 		echo "<td>".$res['phone']."</td>";	
 		echo "<td>".$res['duedate']."</td>";
+    echo "<td>".$res['duedate']."</td>";
 		echo "<td><a class='btn btn-warning' href=\"customeredit.php?id=$res[id]\">Edit</a>  </td>";
 
 	}

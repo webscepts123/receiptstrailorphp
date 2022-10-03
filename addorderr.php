@@ -1,5 +1,16 @@
 <?php include 'includes/header.php';?>
 
+<style>
+  .result
+  {
+    background-color: DodgerBlue;
+    color: white;
+    left: 0;
+    right: 0;
+    z-index: 99;
+  }
+</style>
+
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 <script>
@@ -102,6 +113,30 @@ $(document).ready(function(){
 </script>
 
 
+<script>
+$(document).ready(function(){
+    $('.search-box input[type="text"]').on("keyup input", function(){
+        /* Get input value on change */
+        var inputVal = $(this).val();
+        var resultDropdown = $(this).siblings(".result");
+        if(inputVal.length){
+            $.get("backend-search.php", {term: inputVal}).done(function(data){
+                // Display the returned data in browser
+                resultDropdown.html(data);
+            });
+        } else{
+            resultDropdown.empty();
+        }
+    });
+    
+    // Set search input value on click of result item
+    $(document).on("click", ".result p", function(){
+        $(this).parents(".search-box").find('input[type="text"]').val($(this).text());
+        $(this).parent(".result").empty();
+    });
+});
+</script>
+
 <div class="container">
   <h3>Add Order</h3>  
     
@@ -122,11 +157,14 @@ $(document).ready(function(){
                   <div class="row">
                     <div class="col">
                         <div class="form-group">
+                        <div class="search-box">
                           <input type="text" name="customername" class="form-control" placeholder="Customer Name">
+                          <div class="result"></div>
+                        </div>
                         </div>
                     </div>
                     <div class="col">
-                        <button onclick="window.location.href='rentcustomer.php';" class="btn btn-success">Add Customer</button>
+                        <a href='rentcustomer.php' class="btn btn-success">Add Customer</a>
 
                     </div>
 
@@ -276,7 +314,7 @@ $(document).ready(function(){
 
         
         <div class="form-group">
-            <input  type="hidden" name="status" value="Preparing" class="form-control">
+            <input type="hidden" name="status" value="Preparing" class="form-control">
         </div>
             
   
