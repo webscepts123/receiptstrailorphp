@@ -9,7 +9,7 @@
     
     
 
-    $result = "INSERT INTO rentorders (id ,status) VALUES ('$id' ,'$status')";
+    $result = "UPDATE  rentorders SET id='$id', status='$status' WHERE id='$id' ";
 
     if(!mysqli_query($mysqli, $result)) {
         die('Error: ' . mysqli_error($mysqli));

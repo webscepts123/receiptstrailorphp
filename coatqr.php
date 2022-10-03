@@ -47,9 +47,7 @@ echo $text;
           <br>
           Product Name :<?php echo $singleRow['prodname']; ?>
           <br>
-          <br>
-          Telephone No : <?php echo $singleRow['telephone']; ?>
-          <br>
+          
           <br>
           
       </div>

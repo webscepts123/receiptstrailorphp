@@ -2,12 +2,6 @@
 
 
 
-
-
-
-
-
-
 <div class="container">
     <h5 class="head5">Add Product Category </h5>
 	<form action="addcat.php" method="post">

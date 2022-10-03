@@ -63,7 +63,6 @@ $result = mysqli_query($mysqli, "SELECT * FROM rentorders ORDER BY id DESC");
     <tr>
       <th scope="col">Receipt No</th>
       <th scope="col">Customer Name</th>
-      <th scope="col">Telephone</th>
       <th scope="col">Amount</th>
       <th scope="col">Advance Amount</th>
       <th scope="col">Status</th>
@@ -78,10 +77,9 @@ $result = mysqli_query($mysqli, "SELECT * FROM rentorders ORDER BY id DESC");
 		echo "<tr>";
 		echo "<td>".$res['id']."</td>";
 		echo "<td>".$res['customername']."</td>";
-		echo "<td>".$res['telephone']."</td>";	
-        echo "<td>".$res['amount']."</td>";
-        echo "<td>".$res['advanceamt']."</td>";
-        echo "<td>".$res['status']."</td>";
+    echo "<td>".$res['amount']."</td>";
+    echo "<td>".$res['advanceamt']."</td>";
+      echo "<td>".$res['status']."</td>";
     echo "  <td><a class='btn btn-primary' href=\"rentinvoice.php?id=$res[id]\">View Invoice</a>  </td><td><a class='btn btn-primary' href=\"terminalprint.php?id=$res[id]\">View termal Invoice</a>  </td><td><a class='btn btn-primary' href=\"rentqrcodeorder.php?id=$res[id]\">View QR Code</a>  </td><td><a class='btn btn-primary' href=\"actions.php?id=$res[id]\">View Action</a>  </td> ";
 	
 	

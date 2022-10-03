@@ -1,27 +1,40 @@
 <?php include 'includes/header.php';?>
 
+<?php
+
+include_once("connection.php"); 
+
+//fetching data in descending order (lastest entry first)
+$result = mysqli_query($mysqli, "SELECT * FROM rentorders ORDER BY id DESC");
+
+?>
 
 <?php
-//including the database connection file
 include_once("connection.php");
 
- $sql = "SELECT * FROM rentorders WHERE id='" . $_GET["id"] . "'";
+    
+    $sql = "SELECT * FROM rentorders WHERE id='" . $_GET["id"] . "'";
+  
 
     $result=mysqli_query($mysqli,$sql);
     $singleRow = mysqli_fetch_assoc($result);
-
+    
 
 ?>
 
 
+
 <div class="container">
     <h3>View Action</h3>
-    
-    <form actions="addactions" method="post">
+    <br>
+    <br>
+    <form action="addactions.php" method="post" name="form1">
         
         
        <div class="form-group">
-         <label>Action</label>
+
+
+         <input type="hidden" name="id" value="<?php echo $singleRow['id']; ?>">
            <select name="status" class="form-control">
              <option value="pending">Pending</option>
              <option value="complete">Complete</option>

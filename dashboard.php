@@ -53,7 +53,7 @@ include("connection.php");
          while ($row = mysqli_fetch_array($result)) { 
  
             $productname[]  = $row['paid_amount']  ;
-            $sales[] = $row['TotalSales'];
+            $sales[] = $row['paid_amount'];
         }
  
  
@@ -116,16 +116,13 @@ include("connection.php");
 
 
 <?php
-$databaseHost = 'localhost';
-$databaseName = 'receiptstailor_demo';
-$databaseUsername = 'receiptstailor_demo';
-$databasePassword = 'xCV(MrQQRvS5';
-$con  = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName);
-if(!$con){
+include("connection.php");
+
+if(!$mysqli){
 echo "Problem in database connection..." .mysqli_error();
 }else{
 $sql = "SELECT * FROM rentorders";
-$result = mysqli_query($con,$sql);
+$result = mysqli_query($mysqli,$sql);
 $chart_data = "";
 while($row = mysqli_fetch_array($result)){
 $productname[] = $row['date'];
