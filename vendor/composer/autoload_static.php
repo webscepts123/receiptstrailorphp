@@ -15,12 +15,21 @@ class ComposerStaticInit3d83a8f38ab4b2d7df96779380a6ca8f
         array (
             'Zxing\\' => 6,
         ),
+        'M' => 
+        array (
+            'Mike42\\' => 7,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
         'Zxing\\' => 
         array (
             0 => __DIR__ . '/..' . '/khanamiryan/qrcode-detector-decoder/lib',
+        ),
+        'Mike42\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mike42/escpos-php/src/Mike42',
+            1 => __DIR__ . '/..' . '/mike42/gfx-php/src/Mike42',
         ),
     );
 

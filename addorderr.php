@@ -122,12 +122,12 @@ $(document).ready(function(){
                   <div class="row">
                     <div class="col">
                         <div class="form-group">
-                          <label>Customer Name</label>
-                          <input type="text" name="customername" class="form-control" placeholder="Name">
+                          <input type="text" name="customername" class="form-control" placeholder="Customer Name">
                         </div>
                     </div>
                     <div class="col">
-                        Column
+                        <button onclick="window.location.href='rentcustomer.php';" class="btn btn-success">Add Customer</button>
+
                     </div>
 
                   </div>
