@@ -63,13 +63,13 @@ $result = mysqli_query($mysqli, "SELECT * FROM coats ORDER BY id DESC");
     // Include the qrlib file
     include 'phpqrcode/qrlib.php';
     
-      $fileName = $singleRow['sku']; 
+      $fileName = $singleRow['code']; 
 	while($res = mysqli_fetch_array($result)) {		
 		echo "<tr>";
 		echo "<td>".$res['id']."</td>";
 		echo "<td>".$res['idno']."</td>";
 		echo "<td>".$res['productname']."</td>";	
-		echo "<td>".$res['sku']."</td>";	
+		echo "<td>".$res['code']."</td>";	
         echo "<td>".$res['category']."</td>";
         echo "<td>".$res['subcategory']."</td>";
         echo "<td>".$res['price']."</td>";

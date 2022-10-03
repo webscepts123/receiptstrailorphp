@@ -2,12 +2,7 @@
 
 
 <?php 
-$databaseHost = 'localhost';
-$databaseName = 'receiptstailor_demo';
-$databaseUsername = 'receiptstailor_demo';
-$databasePassword = 'xCV(MrQQRvS5';
-
-$mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName); 
+include("connection.php");
 
 $result = mysqli_query($mysqli, "SELECT * FROM orders WHERE order_due='1' ");
 $rows = mysqli_num_rows($result);
@@ -16,12 +11,7 @@ $rows = mysqli_num_rows($result);
 ?>
 
 <?php 
-$databaseHost = 'localhost';
-$databaseName = 'receiptstailor_demo';
-$databaseUsername = 'receiptstailor_demo';
-$databasePassword = 'xCV(MrQQRvS5';
-
-$mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName); 
+include("connection.php");
 
 $result = mysqli_query($mysqli, "SELECT * FROM rentorders  ");
 $rowspp = mysqli_num_rows($result);
@@ -30,12 +20,7 @@ $rowspp = mysqli_num_rows($result);
 ?>
 
 <?php 
-$databaseHost = 'localhost';
-$databaseName = 'receiptstailor_demo';
-$databaseUsername = 'receiptstailor_demo';
-$databasePassword = 'xCV(MrQQRvS5';
-
-$mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName); 
+include("connection.php");
 
 $results = mysqli_query($mysqli, "SELECT COUNT name FROM orders ");
 
@@ -46,12 +31,7 @@ $rowsb = mysqli_num_rows($result);
 ?>
 
 <?php 
-$databaseHost = 'localhost';
-$databaseName = 'receiptstailor_demo';
-$databaseUsername = 'receiptstailor_demo';
-$databasePassword = 'xCV(MrQQRvS5';
-
-$mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName); 
+include("connection.php");
 
 $results = mysqli_query($mysqli, "SELECT COUNT customername FROM rentcustomer");
 
@@ -62,17 +42,13 @@ $rowsbss = mysqli_num_rows($result);
 ?>
 
 <?php
-$databaseHost = 'localhost';
-$databaseName = 'receiptstailor_demo';
-$databaseUsername = 'receiptstailor_demo';
-$databasePassword = 'xCV(MrQQRvS5';
-$con  = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName);
- if (!$con) {
+include("connection.php");
+ if (!$mysqli) {
      # code...
     echo "Problem in database connection! Contact administrator!" . mysqli_error();
  }else{
          $sql ="SELECT * FROM orders";
-         $result = mysqli_query($con,$sql);
+         $result = mysqli_query($mysqli,$sql);
          $chart_data="";
          while ($row = mysqli_fetch_array($result)) { 
  
