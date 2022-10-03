@@ -3,11 +3,11 @@
   include_once("connection.php"); 
 
 
-if (isset($_POST['update'])) {
+if (isset($_POST['Submit'])) {
     $id = $_POST['id'];
-	$idno = $_POST['idno'];  
+	  $idno = $_POST['idno'];  
     $productname = $_POST['productname'];
-    $sku = $_POST['sku']; 
+    $code = $_POST['code']; 
     $category = $_POST['category']; 
     $subcategory = $_POST['subcategory']; 
     $pcolour = $_POST['pcolour'];
@@ -17,9 +17,8 @@ if (isset($_POST['update'])) {
     
 
 
+    $result = "UPDATE coats SET id='$id', idno='$idno', productname='$productname', code='$code', category='$category', subcategory='$subcategory', pcolour='$pcolour', material='$material', price='$price' WHERE id='$id'";
 	 
-	 
-	$result=mysqli_query($mysqli, "UPDATE coats SET idno='$idno',productname='$productname',sku='$sku',category='$category',subcategory='$subcategory',pcolour='$pcolour',material='$material',price='$price' WHERE id='$id'");
 	
 	  if(!mysqli_query($mysqli,$result)) {
       die('Error: ' . mysqli_error($mysqli));

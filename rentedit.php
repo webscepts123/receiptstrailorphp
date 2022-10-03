@@ -19,6 +19,9 @@
     padding: 51px;
 ">
       	<form action="upedit.php" method="post" name="form1">
+
+            <input type="hidden" name="id" value="<?php echo $singleRow['id']; ?>">
+
             <div class="form-group">
                 <label>ID Number</label>
                 <input  type="nubmer" name="idno" value="<?php echo $singleRow['idno']; ?>" class="form-control">
@@ -37,7 +40,7 @@
         
         <div class="form-group">
                 <label>SKU</label>
-                <input type="text" name="sku" value="<?php echo $singleRow['sku']; ?>" class="form-control">
+                <input type="text" name="code" value="<?php echo $singleRow['code']; ?>" class="form-control">
             </div>
 
         <br>
@@ -74,7 +77,7 @@
         <br>
             
   
-            <input type="submit" class="btn btn-primary" name="update" value="Update Product">
+            <input type="submit" class="btn btn-primary" name="Submit" value="Update Product">
     </div>
  
     </form>
