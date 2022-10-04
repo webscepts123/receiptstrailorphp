@@ -12,7 +12,7 @@ use Mike42\Escpos\PrintConnectors\NetworkPrintConnector;
 use Mike42\Escpos\Printer;
 $connector = new NetworkPrintConnector("192.168.1.23", 9600);
 $printer = new Printer($connector);
-$printer -> text("Hello World!\");
+$printer -> text("Hello World!\n");
 $printer -> cut();
 $printer -> close();
 ?>
