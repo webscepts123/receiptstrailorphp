@@ -9,6 +9,7 @@ include_once("connection.php");
 
     require __DIR__ . '/vendor/autoload.php';   
 use Mike42\Escpos\PrintConnectors\NetworkPrintConnector;
+use Mike42\Escpos\PrintConnectors\FilePrintConnector;
 use Mike42\Escpos\Printer;
 $connector = new NetworkPrintConnector("192.168.1.23", 9600);
 $printer = new Printer($connector);
