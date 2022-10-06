@@ -65,6 +65,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM rentorders ORDER BY id DESC");
       <th scope="col">Amount</th>
       <th scope="col">Advance Amount</th>
       <th scope="col">Status</th>
+      <th scope="col">Payment Method</th>
       <th scope="col">Action</th>
       
 
@@ -78,7 +79,8 @@ $result = mysqli_query($mysqli, "SELECT * FROM rentorders ORDER BY id DESC");
 		echo "<td>".$res['customername']."</td>";
     echo "<td>".$res['amount']."</td>";
     echo "<td>".$res['advanceamt']."</td>";
-      echo "<td>".$res['status']."</td>";
+    echo "<td>".$res['status']."</td>";
+    echo "<td>".$res['paymethod']."</td>";
     echo "  <td><a class='btn btn-primary' href=\"rentinvoice.php?id=$res[id]\">View Invoice</a>  </td><td><a class='btn btn-primary' href=\"terminalprint.php?id=$res[id]\">View termal Invoice</a>  </td><td><a class='btn btn-primary' href=\"rentqrcodeorder.php?id=$res[id]\">View QR Code</a>  </td><td><a class='btn btn-primary' href=\"actions.php?id=$res[id]\">View Action</a>  </td><td><a class='btn btn-primary' href=\"paymethod.php?id=$res[id]\">Payment Method</a>  </td> ";
 	
 	

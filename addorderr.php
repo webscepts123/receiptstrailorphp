@@ -1,5 +1,13 @@
 <?php include 'includes/header.php';?>
 
+<?php
+//including the database connection file
+include_once("connection.php");
+
+//fetching data in descending order (lastest entry first)
+$result = mysqli_query($mysqli, "SELECT * FROM rentcustomer ORDER BY id DESC");
+?>
+
 <style>
   .result
   {
@@ -157,19 +165,27 @@ $(document).ready(function(){
                   <div class="row">
                     <div class="col">
                         <div class="form-group">
-                        <div class="search-box">
-                          <input type="text" name="customername" class="form-control" placeholder="Customer Name">
-                          <div class="result"></div>
-                        </div>
+                         <label>Customer Name</label>
+                          <select class=" search-box form-control" searchable id="cars">
+                            <option  >Choose a Customer</option>
+                            <?php
+	                          while($res = mysqli_fetch_array($result)) {	
+                           echo  '<option value= "'.$res['id'].'">' .$res['customername'].'</option>';
+                            }
+                            ?>
+                          </select>
+
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col" style="padding: 30px;">
+
+                         
                         <a href='rentcustomer.php' class="btn btn-success">Add Customer</a>
 
                     </div>
 
                   </div>
-            </div>
+                          </div>
 
 
         <br>
