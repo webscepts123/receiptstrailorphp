@@ -166,7 +166,7 @@ $(document).ready(function(){
                     <div class="col">
                         <div class="form-group">
                          <label>Customer Name</label>
-                          <select class=" search-box form-control" searchable id="cars">
+                          <select name= "customername" class=" search-box form-control" searchable id="cars">
                             <option  >Choose a Customer</option>
                             <?php
 	                          while($res = mysqli_fetch_array($result)) {	

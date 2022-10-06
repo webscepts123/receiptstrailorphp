@@ -136,7 +136,6 @@ include_once("connection.php");
 	<body>
 	       <div class="container">
 	              	     <button id ="printbtn" type="button" class="btn btn-success"  onClick="window.print()">Print this page</button>
-                       <?php echo "<a id ='printbtn' class='btn btn-primary' href=\"salesinvoice.php?id=$singleRow[id]\">Sales Invoice</a>";	?>
 
                            <?php echo "<a id ='printbtn' class='btn btn-primary' href=\"invoicedit.php?id=$singleRow[id]\">Edit</a>";	?>
 
@@ -158,6 +157,7 @@ include_once("connection.php");
 
                 </div>
                 <div class="col">
+                  <h3>Sales Receipt</h3>
                   <span>Invoice #<?php echo $singleRow['id']; ?></span><br>
                   <span>Date: <?php echo $singleRow['created_at']; ?></span><br>
                   <span>Due Date:  <?php echo $singleRow['order_due']; ?></span>
@@ -484,7 +484,9 @@ include_once("connection.php");
 
  <!--</div>-->
  
-
+ <div class="">
+    <p>Deposit : LKR<?php echo $singleRow['advanceamt']; ?></p>
+</div>
  
 <br>
 <br>
