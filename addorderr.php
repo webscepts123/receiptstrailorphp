@@ -327,6 +327,59 @@ $(document).ready(function(){
 		      	</div>
 		      	
 
+            <div class="row">	
+		      		<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+		      			<h3>Notes: </h3>
+		      			<div class="form-group">
+							<textarea class="form-control txt" rows="5" name="notes" placeholder="Your Notes"></textarea>
+						</div>
+						<br>
+					
+						
+		      		</div>
+		      		<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+						<span class="form-inline">
+							<div class="form-group">
+								<label>Subtotal: &nbsp;</label>
+								<div class="input-group">
+									<input value="<?php echo $invoiceValues['order_total_before_tax']; ?>" type="number" class="form-control" name="subTotal" id="subTotal" placeholder="Subtotal">
+								</div>
+							</div>
+							<div class="form-group">
+								<label>Tax Rate: &nbsp;</label>
+								<div class="input-group">
+									<input value="<?php echo $invoiceValues['order_tax_per']; ?>" type="number" class="form-control" name="taxRate" id="taxRate" placeholder="Tax Rate">
+									<div class="input-group-addon">%</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label>Tax Amount: &nbsp;</label>
+								<div class="input-group">
+									<input value="<?php echo $invoiceValues['order_total_tax']; ?>" type="number" class="form-control" name="taxAmount" id="taxAmount" placeholder="Tax Amount">
+								</div>
+							</div>							
+							<div class="form-group">
+								<label>Total: &nbsp;</label>
+								<div class="input-group">
+									<input value="<?php echo $invoiceValues['order_total_after_tax']; ?>" type="number" class="form-control" name="totalAftertax" id="totalAftertax" placeholder="Total">
+								</div>
+							</div>
+							<div class="form-group">
+								<label>Amount Paid: &nbsp;</label>
+								<div class="input-group">
+									<input value="<?php echo $invoiceValues['order_amount_paid']; ?>" type="number" class="form-control" name="amountPaid" id="amountPaid" placeholder="Amount Paid">
+								</div>
+							</div>
+							<div class="form-group">
+								<label>Amount Due: &nbsp;</label>
+								<div class="input-group">
+									<input value="<?php echo $invoiceValues['order_total_amount_due']; ?>" type="number" class="form-control" name="amountDue" id="amountDue" placeholder="Amount Due">
+								</div>
+							</div>
+						</span>
+					</div>
+		      	</div>
+
 
         
         <div class="form-group">

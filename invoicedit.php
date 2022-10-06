@@ -85,14 +85,10 @@ if(!empty($_GET['update_id']) && $_GET['update_id']) {
 		      		<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
 		      			<h3>Notes: </h3>
 		      			<div class="form-group">
-							<textarea class="form-control txt" rows="5" name="notes" id="notes" placeholder="Your Notes"><?php echo $invoiceValues['note']; ?></textarea>
+							<textarea class="form-control txt" rows="5" name="notes"  placeholder="Your Notes"><?php echo $invoiceValues['note']; ?></textarea>
 						</div>
 						<br>
-						<div class="form-group">
-							<input type="hidden" value="<?php echo $_SESSION['userid']; ?>" class="form-control" name="userId">
-							<input type="hidden" value="<?php echo $invoiceValues['order_id']; ?>" class="form-control" name="invoiceId" id="invoiceId">
-			      			<input data-loading-text="Updating Invoice..." type="submit" name="invoice_btn" value="Save Invoice" class="btn btn-success submit_btn invoice-save-btm">
-			      		</div>
+					
 						
 		      		</div>
 		      		<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
@@ -101,42 +97,38 @@ if(!empty($_GET['update_id']) && $_GET['update_id']) {
 								<label>Subtotal: &nbsp;</label>
 								<div class="input-group">
 									<div class="input-group-addon currency">$</div>
-									<input value="<?php echo $invoiceValues['order_total_before_tax']; ?>" type="number" class="form-control" name="subTotal" id="subTotal" placeholder="Subtotal">
+									<input value="" type="number" class="form-control" name="subTotal" id="subTotal" placeholder="Subtotal">
 								</div>
 							</div>
 							<div class="form-group">
 								<label>Tax Rate: &nbsp;</label>
 								<div class="input-group">
-									<input value="<?php echo $invoiceValues['order_tax_per']; ?>" type="number" class="form-control" name="taxRate" id="taxRate" placeholder="Tax Rate">
+									<input value="" type="number" class="form-control" name="taxRate" id="taxRate" placeholder="Tax Rate">
 									<div class="input-group-addon">%</div>
 								</div>
 							</div>
 							<div class="form-group">
 								<label>Tax Amount: &nbsp;</label>
 								<div class="input-group">
-									<div class="input-group-addon currency">$</div>
-									<input value="<?php echo $invoiceValues['order_total_tax']; ?>" type="number" class="form-control" name="taxAmount" id="taxAmount" placeholder="Tax Amount">
+									<input value="" type="number" class="form-control" name="taxAmount" id="taxAmount" placeholder="Tax Amount">
 								</div>
 							</div>							
 							<div class="form-group">
 								<label>Total: &nbsp;</label>
 								<div class="input-group">
-									<div class="input-group-addon currency">$</div>
-									<input value="<?php echo $invoiceValues['order_total_after_tax']; ?>" type="number" class="form-control" name="totalAftertax" id="totalAftertax" placeholder="Total">
+									<input value="" type="number" class="form-control" name="totalAftertax" id="totalAftertax" placeholder="Total">
 								</div>
 							</div>
 							<div class="form-group">
 								<label>Amount Paid: &nbsp;</label>
 								<div class="input-group">
-									<div class="input-group-addon currency">$</div>
-									<input value="<?php echo $invoiceValues['order_amount_paid']; ?>" type="number" class="form-control" name="amountPaid" id="amountPaid" placeholder="Amount Paid">
+									<input value="" type="number" class="form-control" name="amountPaid" id="amountPaid" placeholder="Amount Paid">
 								</div>
 							</div>
 							<div class="form-group">
 								<label>Amount Due: &nbsp;</label>
 								<div class="input-group">
-									<div class="input-group-addon currency">$</div>
-									<input value="<?php echo $invoiceValues['order_total_amount_due']; ?>" type="number" class="form-control" name="amountDue" id="amountDue" placeholder="Amount Due">
+									<input value="" type="number" class="form-control" name="amountDue" id="amountDue" placeholder="Amount Due">
 								</div>
 							</div>
 						</span>

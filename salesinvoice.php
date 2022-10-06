@@ -437,7 +437,7 @@ include_once("connection.php");
                   <td class="none"></td>
                   <td class="none"></td>
                   <td class="none">Total</td>
-                  <td>LKR 1300</td>
+                  <td>LKR </td>
                   
                 </tr>
 
@@ -446,7 +446,7 @@ include_once("connection.php");
                   <td class="none"></td>
                   <td class="none"></td>
                   <td class="none">Payment</td>
-                  <td>LKR 1300</td>
+                  <td>LKR </td>
                   
                 </tr>
 
@@ -455,7 +455,7 @@ include_once("connection.php");
                   <td class="none"></td>
                   <td class="none"></td>
                   <td class="none">Due Balance</td>
-                  <td>LKR 1300</td>
+                  <td>LKR </td>
                   
                 </tr>
                 
