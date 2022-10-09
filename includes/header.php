@@ -1,10 +1,12 @@
-<?php session_start();
-if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-    $welcomeMessage = "Welcome to the member's area, " . $_SESSION['name'] . "!";
-} else {
-    
+<?php
+// Initialize the session
+session_start();
+ 
+// Check if the user is logged in, if not then redirect him to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: login.php");
+    exit;
 }
-
 ?>
 
 
@@ -21,7 +23,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 		<meta name="Keywords" content="admin,admin dashboard,admin dashboard template,admin panel template,admin template,admin theme,bootstrap 4 admin template,bootstrap 4 dashboard,bootstrap admin,bootstrap admin dashboard,bootstrap admin panel,bootstrap admin template,bootstrap admin theme,bootstrap dashboard,bootstrap form template,bootstrap panel,bootstrap ui kit,dashboard bootstrap 4,dashboard design,dashboard html,dashboard template,dashboard ui kit,envato templates,flat ui,html,html and css templates,html dashboard template,html5,jquery html,premium,premium quality,sidebar bootstrap 4,template admin bootstrap 4"/>
 
 		<!-- Title -->
-		<title> Shan Tailors </title>
+		<title> Shan Tailors  </title>
 		<!-- CSS only -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
@@ -55,16 +57,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 	
      <?php include 'menu.php' ?>
      
-     <section class="space">
-         
-         <?php if (isset($_SESSION['message'])): ?>
-	<div class="msg">
-		<?php 
-			echo $_SESSION['message']; 
-			unset($_SESSION['message']);
-		?>
-	</div>
-    <?php endif ?>
+     <?php echo htmlspecialchars($_SESSION["username"]); ?>
          
          
      <?php include 'footer.php' ?>

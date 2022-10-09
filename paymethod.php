@@ -36,12 +36,56 @@ include_once("connection.php");
 
          <input type="hidden" name="id" value="<?php echo $singleRow['id']; ?>">
            <select name="paymethod" class="form-control">
+            <option value="cash">Choose Payment Option</option>
              <option value="cash">Cash</option>
              <option value="cheque">Cheque</option>
              <option value="card">Card</option>
              
            </select>
+           <br>
+           <br>
+
+           <label for="">Price Amount</label>
+           <input type="text" class="form-control" name="priceamt">
+
+           <br>
+           <br>
+           <select name="paymethod2" class="form-control">
+           <option value="cash">Choose Payment Option</option>
+
+             <option value="cash">Cash</option>
+             <option value="cheque">Cheque</option>
+             <option value="card">Card</option>
+             
+           </select>
+           <br>
+           <br>
+           <label for="">Price Amount</label>
+           <input type="text" class="form-control" name="priceamt2">
+
+           <br>
+           <br>
+
+           <select name="paymethod3" class="form-control">
+           <option value="cash">Choose Payment Option</option>
+
+             <option value="cash">Cash</option>
+             <option value="cheque">Cheque</option>
+             <option value="card">Card</option>
+             
+           </select>
+           <br>
+           <br>
+           <label for="">Price Amount</label>
+           <input type="text" class="form-control" name="priceamt3">
+
+
         </div>
+
+        <br>
+           <br>
+        
+    
         
         <input type="submit"class="btn btn-primary" name="Submit" value="Add Action">
     </form>
