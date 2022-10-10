@@ -168,7 +168,7 @@
           <img src="assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block"><?php echo htmlspecialchars($_SESSION["username"]); ?></a>
         </div>
       </div>
 
@@ -267,7 +267,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="adduser.php" class="nav-link">
+                <a href="register.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add User</p>
                 </a>
