@@ -2,7 +2,7 @@ RewriteEngine On
 RewriteBase /
 
 RewriteCond %{DOCUMENT_ROOT}/$1 !-d
-RewriteRule ^([^/]+)/index\.php$ dashboard.php [L,NC]
+RewriteRule ^([^/]+)/index\.php$ login.php [L,NC]
 
 # php -- BEGIN cPanel-generated handler, do not edit
 # Set the “ea-php74” package as the default “PHP” programming language.
