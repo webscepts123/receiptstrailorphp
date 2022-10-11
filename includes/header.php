@@ -284,6 +284,12 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                   <p>View Order</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="checkinvoice.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Check Invoice</p>
+                </a>
+              </li>
             
             </ul>
           </li>

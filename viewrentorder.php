@@ -10,6 +10,14 @@ $result = mysqli_query($mysqli, "SELECT * FROM rentorders ORDER BY id DESC");
 ?>
 
 
+<?php
+include_once("connection.php");
+$sql = "SELECT * FROM rentcustomer WHERE id='" . $_GET["id"] . "'"; // Fetch data from the table customers using id
+$results=mysqli_query($mysqli,$sql);
+$singleRow = mysqli_fetch_assoc($results);
+?>
+
+
 <style>
     
     

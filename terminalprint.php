@@ -1,11 +1,42 @@
 <?php
+
+class item
+{
+    private $name;
+    private $price;
+    private $dollarSign;
+
+    public function __construct($name = '', $price = '', $dollarSign = false)
+    {
+        $this -> name = $name;
+        $this -> price = $price;
+        $this -> dollarSign = $dollarSign;
+    }
+
+    public function __toString()
+    {
+        $rightCols = 10;
+        $leftCols = 38;
+        if ($this -> dollarSign) {
+            $leftCols = $leftCols / 2 - $rightCols / 2;
+        }
+        $left = str_pad($this -> name, $leftCols) ;
+
+        $sign = ($this -> dollarSign ? '$ ' : '');
+        $right = str_pad($sign . $this -> price, $rightCols, ' ', STR_PAD_LEFT);
+        return "$left$right\n";
+    }
+}
+
+
 require __DIR__ . '/vendor/autoload.php';
 use Mike42\Escpos\Printer;
 use Mike42\Escpos\EscposImage;
-use Mike42\Escpos\PrintConnectors\FilePrintConnector;
+use Mike42\Escpos\PrintConnectors\WindowsPrintConnector;
 
 /* Open the printer; this will change depending on how it is connected */
-$connector = new FilePrintConnector("/dev/usb/lp0");
+$connector = new WindowsPrintConnector("POS 80");
+
 $printer = new Printer($connector);
 
 /* Information for the receipt */
@@ -23,7 +54,7 @@ $total = new item('Total', '14.25', true);
 $date = "Monday 6th of April 2015 02:56:25 PM";
 
 /* Start the printer */
-$logo = EscposImage::load("resources/escpos-php.png", false);
+$logo = EscposImage::load("assets/img/card4.png", false);
 $printer = new Printer($connector);
 
 /* Print top logo */
@@ -76,30 +107,7 @@ $printer -> pulse();
 $printer -> close();
 
 /* A wrapper to do organise item names & prices into columns */
-class item
-{
-    private $name;
-    private $price;
-    private $dollarSign;
 
-    public function __construct($name = '', $price = '', $dollarSign = false)
-    {
-        $this -> name = $name;
-        $this -> price = $price;
-        $this -> dollarSign = $dollarSign;
-    }
 
-    public function __toString()
-    {
-        $rightCols = 10;
-        $leftCols = 38;
-        if ($this -> dollarSign) {
-            $leftCols = $leftCols / 2 - $rightCols / 2;
-        }
-        $left = str_pad($this -> name, $leftCols) ;
 
-        $sign = ($this -> dollarSign ? '$ ' : '');
-        $right = str_pad($sign . $this -> price, $rightCols, ' ', STR_PAD_LEFT);
-        return "$left$right\n";
-    }
-}
+?>
