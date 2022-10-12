@@ -32,10 +32,10 @@ class item
 require __DIR__ . '/vendor/autoload.php';
 use Mike42\Escpos\Printer;
 use Mike42\Escpos\EscposImage;
-use Mike42\Escpos\PrintConnectors\WindowsPrintConnector;
+use Mike42\Escpos\PrintConnectors\NetworkPrintConnector;
 
 /* Open the printer; this will change depending on how it is connected */
-$connector = new WindowsPrintConnector("POS 80");
+$connector = new NetworkPrintConnector("192.168.1.100", 9600);
 
 $printer = new Printer($connector);
 
