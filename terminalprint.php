@@ -1,113 +1,112 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="style.css">
+        <title>Receipt example</title>
 
-class item
-{
-    private $name;
-    private $price;
-    private $dollarSign;
-
-    public function __construct($name = '', $price = '', $dollarSign = false)
-    {
-        $this -> name = $name;
-        $this -> price = $price;
-        $this -> dollarSign = $dollarSign;
-    }
-
-    public function __toString()
-    {
-        $rightCols = 10;
-        $leftCols = 38;
-        if ($this -> dollarSign) {
-            $leftCols = $leftCols / 2 - $rightCols / 2;
-        }
-        $left = str_pad($this -> name, $leftCols) ;
-
-        $sign = ($this -> dollarSign ? '$ ' : '');
-        $right = str_pad($sign . $this -> price, $rightCols, ' ', STR_PAD_LEFT);
-        return "$left$right\n";
-    }
+        <style>
+            * {
+    font-size: 12px;
+    font-family: 'Times New Roman';
 }
 
-
-require __DIR__ . '/vendor/autoload.php';
-use Mike42\Escpos\Printer;
-use Mike42\Escpos\EscposImage;
-use Mike42\Escpos\PrintConnectors\NetworkPrintConnector;
-
-/* Open the printer; this will change depending on how it is connected */
-$connector = new NetworkPrintConnector("192.168.1.100", 9600);
-
-$printer = new Printer($connector);
-
-/* Information for the receipt */
-$items = array(
-    new item("Example item #1", "4.00"),
-    new item("Another thing", "3.50"),
-    new item("Something else", "1.00"),
-    new item("A final item", "4.45"),
-);
-$subtotal = new item('Subtotal', '12.95');
-$tax = new item('A local tax', '1.30');
-$total = new item('Total', '14.25', true);
-/* Date is kept the same for testing */
-// $date = date('l jS \of F Y h:i:s A');
-$date = "Monday 6th of April 2015 02:56:25 PM";
-
-/* Start the printer */
-$logo = EscposImage::load("assets/img/card4.png", false);
-$printer = new Printer($connector);
-
-/* Print top logo */
-$printer -> setJustification(Printer::JUSTIFY_CENTER);
-$printer -> graphics($logo);
-
-/* Name of shop */
-$printer -> selectPrintMode(Printer::MODE_DOUBLE_WIDTH);
-$printer -> text("ExampleMart Ltd.\n");
-$printer -> selectPrintMode();
-$printer -> text("Shop No. 42.\n");
-$printer -> feed();
-
-/* Title of receipt */
-$printer -> setEmphasis(true);
-$printer -> text("SALES INVOICE\n");
-$printer -> setEmphasis(false);
-
-/* Items */
-$printer -> setJustification(Printer::JUSTIFY_LEFT);
-$printer -> setEmphasis(true);
-$printer -> text(new item('', '$'));
-$printer -> setEmphasis(false);
-foreach ($items as $item) {
-    $printer -> text($item);
+td,
+th,
+tr,
+table {
+    border-top: 1px solid black;
+    border-collapse: collapse;
 }
-$printer -> setEmphasis(true);
-$printer -> text($subtotal);
-$printer -> setEmphasis(false);
-$printer -> feed();
 
-/* Tax and total */
-$printer -> text($tax);
-$printer -> selectPrintMode(Printer::MODE_DOUBLE_WIDTH);
-$printer -> text($total);
-$printer -> selectPrintMode();
+td.description,
+th.description {
+    width: 75px;
+    max-width: 75px;
+}
 
-/* Footer */
-$printer -> feed(2);
-$printer -> setJustification(Printer::JUSTIFY_CENTER);
-$printer -> text("Thank you for shopping at ExampleMart\n");
-$printer -> text("For trading hours, please visit example.com\n");
-$printer -> feed(2);
-$printer -> text($date . "\n");
+td.quantity,
+th.quantity {
+    width: 40px;
+    max-width: 40px;
+    word-break: break-all;
+}
 
-/* Cut the receipt and open the cash drawer */
-$printer -> cut();
-$printer -> pulse();
+td.price,
+th.price {
+    width: 40px;
+    max-width: 40px;
+    word-break: break-all;
+}
 
-$printer -> close();
+.centered {
+    text-align: center;
+    align-content: center;
+}
 
-/* A wrapper to do organise item names & prices into columns */
+.ticket {
+    width: 155px;
+    max-width: 155px;
+}
 
+img {
+    max-width: inherit;
+    width: inherit;
+}
 
-
-?>
+@media print {
+    .hidden-print,
+    .hidden-print * {
+        display: none !important;
+    }
+}
+        </style>
+    </head>
+    <body>
+        <div class="ticket">
+            <img src="assets/invoiceimage.png" alt="Logo">
+            <p class="centered">RECEIPT EXAMPLE
+                <br>Address line 1
+                <br>Address line 2</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="quantity">Q.</th>
+                        <th class="description">Description</th>
+                        <th class="price">LKR</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <?php
+	            
+                $productcode= $singleRow['productcode'];
+                $productname= $singleRow['productname'];
+                $quantity= $singleRow['quantity'];
+                $price = $singleRow['price'];
+                $total= $singleRow['total'];
+                
+                 if (empty($productcode)) {
+                   } else {
+                
+             echo "<tr>";
+                echo "<td  style='width:10%;'>"; 
+                echo $singleRow['quantity']; "</td>";
+                echo "<td  style='width:10%;'>"; 
+                echo $singleRow['price'];"</td>";
+                echo "<td style='width:10%;'>";
+                echo $singleRow['total'];"</td>";
+         echo  "</tr>";
+                   }
+           ?>
+                 
+                </tbody>
+            </table>
+            <p class="centered">Thanks for your purchase!
+                <br></p>
+        </div>
+        <button id="btnPrint" class="hidden-print">Print</button>
+        <script src="script.js"></script>
+    </body>
+</html>
