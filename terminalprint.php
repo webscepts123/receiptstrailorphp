@@ -1,3 +1,15 @@
+<?php
+//including the database connection file
+include_once("connection.php");
+
+ $sql = "SELECT * FROM rentorders WHERE id='" . $_GET["id"] . "'";
+
+    $result=mysqli_query($mysqli,$sql);
+    $singleRow = mysqli_fetch_assoc($result);
+
+
+?>
+     
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -84,6 +96,7 @@ img {
                 $productcode= $singleRow['productcode'];
                 $productname= $singleRow['productname'];
                 $quantity= $singleRow['quantity'];
+
                 $price = $singleRow['price'];
                 $total= $singleRow['total'];
                 
@@ -106,7 +119,7 @@ img {
             <p class="centered">Thanks for your purchase!
                 <br></p>
         </div>
-        <button id="btnPrint" class="hidden-print">Print</button>
+        <button id="btnPrint" class="hidden-print" onClick="window.print()">Print</button>
         <script src="script.js"></script>
     </body>
 </html>
