@@ -35,7 +35,7 @@ use Mike42\Escpos\EscposImage;
 use Mike42\Escpos\PrintConnectors\NetworkPrintConnector;
 
 /* Open the printer; this will change depending on how it is connected */
-$connector = new NetworkPrintConnector("192.168.1.123", 9600);
+$connector = new NetworkPrintConnector("192.168.1.100", 9600);
 
 $printer = new Printer($connector);
 
