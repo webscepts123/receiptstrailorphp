@@ -214,19 +214,19 @@ $(document).ready(function(){
               <div class="card-body">
                 
                 <a class="btn btn-app bg-secondary">
-                  <i class="fas fa-barcode"></i> Shirt
+                  <i class="fas fa-barcode"></i> Coat
                 </a>
                 <a class="btn btn-app bg-success">
-                  <i class="fas fa-users"></i> Trouser
+                  <i class="fas fa-users"></i> West Coat
                 </a>
                 <a class="btn btn-app bg-danger">
-                  <i class="fas fa-inbox"></i> Short
+                  <i class="fas fa-inbox"></i> Shirt
                 </a>
                 <a class="btn btn-app bg-warning">
-                  <i class="fas fa-envelope"></i> Coat
+                  <i class="fas fa-envelope"></i> Trouser
                 </a>
                 <a class="btn btn-app bg-info">
-                  <i class="fas fa-heart"></i> West coat
+                  <i class="fas fa-heart"></i> Shorts
                 </a>
               </div>
               <!-- /.card-body -->
