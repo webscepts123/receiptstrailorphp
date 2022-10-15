@@ -209,28 +209,7 @@ $(document).ready(function(){
             </div>
         <br>
 
-		<div class="card">
-            
-              <div class="card-body">
-                
-                <a class="btn btn-app bg-secondary">
-                  <i class="fas fa-barcode"></i> Shirt
-                </a>
-                <a class="btn btn-app bg-success">
-                  <i class="fas fa-users"></i> Trouser
-                </a>
-                <a class="btn btn-app bg-danger">
-                  <i class="fas fa-inbox"></i> Short
-                </a>
-                <a class="btn btn-app bg-warning">
-                  <i class="fas fa-envelope"></i> Coat
-                </a>
-                <a class="btn btn-app bg-info">
-                  <i class="fas fa-heart"></i> West coat
-                </a>
-              </div>
-              <!-- /.card-body -->
-            </div>
+		
         
        	<div class="row">
 		      		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
