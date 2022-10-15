@@ -124,7 +124,7 @@ $(document).ready(function(){
 <script>
 $(document).ready(function(){
   $("#hide20").click(function(){
-    $("#pe11").hide();
+    $("#pe1").hide();
   });
   $("#show20").click(function(){
     $("#pe1").show();
@@ -288,62 +288,75 @@ $(document).ready(function(){
                 </a>
               </div>
 
+
               <div id="pe1" class="container" style="display:none;">
+
+                  <br>
+                  <a id="show20"  class="btn btn-app bg-secondary">
+                     Hide
+                  </a>
+                  <br>
+                  <br>
                  <label>Hight, york, half hand with york</label>
                  <input type="text" name="hight" class="form-control">
                  <br>
                  <br>
 
-                 <label>full hand with york</label>
+                 <label>Full hand with york</label>
                  <input type="text" name="hight" class="form-control">
                  <br>
                  <br>
 
-                 <label>full hand, chest</label>
+                 <label>Full hand, chest</label>
                  <input type="text" name="hight" class="form-control">
                  <br>
                  <br>
 
-                 <label>stomach</label>
+                 <label>Stomach</label>
                  <input type="text" name="hight" class="form-control">
 
-                 <input>
                  <br>
                  <br>
 
-                 <label>seat</label>
-                 <input type="text" name="hight" class="form-control">
-                 <br>
-                 <br>
-
-                 <label>arm</label>
+                 <label>Seat</label>
                  <input type="text" name="hight" class="form-control">
                  <br>
                  <br>
 
-                 <label>l-bow, fold</label>
+                 <label>Arm</label>
+                 <input type="text" name="hight" class="form-control">
+                 <br>
+                 <br>
+
+                 <label>L-bow, fold</label>
                  <input type="text" name="hight" class="form-control">
                  <br>
                  <br>
              </div>
 
              <div id="pe2" class="container" style="display:none;">
+                  <br>
+                  <a id="hide11"  class="btn btn-app bg-secondary">
+                    Hide
+                  </a>
+                  <br>
+                  <br>
                  <label>Hight</label>
                  <input type="text" name="hight" class="form-control">
                  <br>
                  <br>
 
-                 <label>chest</label>
+                 <label>Chest</label>
                  <input type="text" name="hight" class="form-control">
                  <br>
                  <br>
 
-                 <label>stomach</label>
+                 <label>Stomach</label>
                  <input type="text" name="hight" class="form-control">
                  <br>
                  <br>
 
-                 <label>seat</label>
+                 <label>Seat</label>
                  <input type="text" name="hight" class="form-control">
                  <br>
                  <br>
@@ -352,6 +365,12 @@ $(document).ready(function(){
              </div>
 
              <div id="pe3" class="container" style="display:none;">
+                <br>
+                  <a id="hide12"  class="btn btn-app bg-secondary">
+                    Hide
+                  </a>
+                <br>
+                <br>
                  <label>Hight</label>
                  <input type="text" name="hight" class="form-control">
                  <br>
@@ -413,6 +432,12 @@ $(document).ready(function(){
             </div>
 
             <div id="pe4" class="container" style="display:none;">
+            <br>
+                  <a id="hide13"  class="btn btn-app bg-secondary">
+                    </i> Hide
+                  </a>
+                  <br>
+                  <br>
                  <label>Hip</label>
                  <input type="text" name="hight" class="form-control">
                  <br>
@@ -464,6 +489,12 @@ $(document).ready(function(){
              </div>
 
              <div id="pe2" class="container" style="display:none;">
+             <br>
+                  <a id="hide14"  class="btn btn-app bg-secondary">
+                    <i class="fas fa-barcode"></i> Hide
+                  </a>
+                  <br>
+                  <br>
                  <label>Hip</label>
                  <input type="text" name="hight" class="form-control">
 
@@ -499,6 +530,11 @@ $(document).ready(function(){
              
              </div>
 
+
+            
+
+
+                
         
        	<div class="row">
 		      		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -511,104 +547,252 @@ $(document).ready(function(){
 								<th width="15%">Price</th>								
 								<th width="15%">Total</th>
 							</tr>
-													
+						
 							<tr>
+                                <script>
+                                    function calculatePrice()
+{
+
+                                        var quantity = $("#quantity").val();
+                                        var price =  $("#price").val();
+                                        
+
+                                        //calculate final cost
+                                        var total = (quantity * price);
+
+                                        console.log(total);
+                                        //print value to orderTotal
+                                        $("#orderTotal").val(total);
+}
+                                </script>
+                       
 								<td><input class="itemRow" type="checkbox"></td>
 								<td><input type="text"  name="productcode"  class="form-control" autocomplete="off"></td>
 								<td><input type="text" class="form-control" name="productname"  autocomplete="off"></td>			
-								<td><input type="number"  name="quantity" class="form-control quantity" autocomplete="off"></td>
-								<td><input type="number"  name="price"  class="form-control price" autocomplete="off"></td>
-								<td><input type="number"  name="total"  class="form-control total" autocomplete="off"></td>
-									<td><button class="btn btn-danger delete"  type="button" id="hide">- Delete</button><button class="btn btn-success" id="show" type="button">+ Add More</button></td>
+								<td><input type="number"  name="quantity" id="quantity"  class="form-control quantity" autocomplete="off"  value="1"></td>
+								<td><input type="number"  name="price" id="price" class="form-control price" autocomplete="off" ></td>
+                               
+								<td><input type="number"  name="total"  class="form-control total" id="orderTotal" autocomplete="off" readonly ></td>
+                                 
+									<td><button class="btn btn-primary" onclick="calculatePrice()" type="button">Update</button><button class="btn btn-danger delete"  type="button" id="hide">- Delete</button><button class="btn btn-success" id="show" type="button">+ Add More</button></td>
 							
 							</tr>
 							
-								<tr id="p"  style="display:none;">>
+								<tr id="p"  style="display:none;">
+
+                                <script>
+                                    function calculatePrice()
+{
+
+                                        var quantity2 = $("#quantity2").val();
+                                        var price2 =  $("#price2").val();
+                                        
+
+                                        //calculate final cost
+                                        var total2 = (quantity * price);
+
+                                        console.log(total2);
+                                        //print value to orderTotal
+                                        $("#orderTotal2").val(total2);
+}
+                                </script>
 								<td><input class="itemRow" type="checkbox"></td>
 								<td><input type="text"  name="productcode2"  class="form-control" autocomplete="off"></td>
 								<td><input type="text" class="form-control" name="productname2"  autocomplete="off"></td>			
-								<td><input type="number"  name="quantity2" class="form-control quantity" autocomplete="off"></td>
-								<td><input type="number"  name="price2"  class="form-control price" autocomplete="off"></td>
-								<td><input type="number"  name="total2"  class="form-control total" autocomplete="off"></td>
-									<td><button class="btn btn-danger delete"  type="button" id="hide1">- Delete</button><button class="btn btn-success" id="show1" type="button">+ Add More</button></td>
+								<td><input type="number"  name="quantity2"  id="quantity2"  class="form-control quantity" autocomplete="off" value="1"></td>
+								<td><input type="number"  name="price2"  id="price2" class="form-control price" autocomplete="off"></td>
+								<td><input type="number"  name="total2"   id="orderTotal2" class="form-control total" autocomplete="off"></td>
+									<td><button class="btn btn-primary" onclick="calculatePrice()" type="button">Update</button><button class="btn btn-danger delete"  type="button" id="hide1">- Delete</button><button class="btn btn-success" id="show1" type="button">+ Add More</button></td>
 							
 							</tr>	
 								
 								
 							<tr id="p2"  style="display:none;">
+                            <script>
+                                    function calculatePrice()
+{
+
+                                        var quantity3 = $("#quantity3").val();
+                                        var price3 =  $("#price3").val();
+                                        
+
+                                        //calculate final cost
+                                        var total3 = (quantity3 * price3);
+
+                                        console.log(total);
+                                        //print value to orderTotal
+                                        $("#orderTotal").val(total3);
+}
+                                </script>
 								<td><input class="itemRow" type="checkbox"></td>
 								<td><input type="text"  name="productcode3"  class="form-control" autocomplete="off"></td>
 								<td><input type="text" class="form-control" name="productname3"  autocomplete="off"></td>			
-								<td><input type="number"  name="quantity3" class="form-control quantity" autocomplete="off"></td>
-								<td><input type="number"  name="price3"  class="form-control price" autocomplete="off"></td>
-								<td><input type="number"  name="total3"  class="form-control total" autocomplete="off"></td>
-								<td><button class="btn btn-danger delete"  type="button" id="hide2">- Delete</button><button class="btn btn-success" id="show2" type="button">+ Add More</button></td>
+								<td><input type="number"  name="quantity3"  id="quantity3" class="form-control quantity" autocomplete="off"  value="1"></td>
+								<td><input type="number"  name="price3" id="price3"   readonly  class="form-control price" autocomplete="off"></td>
+								<td><input type="number"  name="total3" id="orderTotal3"  class="form-control total" autocomplete="off"></td>
+								<td><button class="btn btn-primary" onclick="calculatePrice()" type="button">Update</button><button class="btn btn-danger delete"  type="button" id="hide2">- Delete</button><button class="btn btn-success" id="show2" type="button">+ Add More</button></td>
 							
 							</tr>	
 								
 								
 							<tr id="p3"  style="display:none;" >
+                            <script>
+                                    function calculatePrice()
+{
+
+                                        var quantity4 = $("#quantity4").val();
+                                        var price4 =  $("#price4").val();
+                                        
+
+                                        //calculate final cost
+                                        var total4 = (quantity4 * price4);
+
+                                        console.log(total4);
+                                        //print value to orderTotal
+                                        $("#orderTotal").val(total4);
+}
+                                </script>
 								<td><input class="itemRow" type="checkbox"></td>
 								<td><input type="text"  name="productcode4"  class="form-control" autocomplete="off"></td>
 								<td><input type="text" class="form-control" name="productname4"  autocomplete="off"></td>			
-								<td><input type="number"  name="quantity4" class="form-control quantity" autocomplete="off"></td>
-								<td><input type="number"  name="price4"  class="form-control price" autocomplete="off"></td>
-								<td><input type="number"  name="total4"  class="form-control total" autocomplete="off"></td>
-	                            <td><button class="btn btn-danger delete"  type="button" id="hide3">- Delete</button><button class="btn btn-success" id="show3" type="button">+ Add More</button></td>
+								<td><input type="number"  name="quantity4" id="quantity4"   class="form-control quantity" autocomplete="off"  value="1"></td>
+								<td><input type="number"  name="price4" id="price4"  readonly class="form-control price" autocomplete="off"></td>
+								<td><input type="number"  name="total4" id="orderTotal4" class="form-control total" autocomplete="off"></td>
+	                            <td><button class="btn btn-primary" onclick="calculatePrice()" type="button">Update</button><button class="btn btn-danger delete"  type="button" id="hide3">- Delete</button><button class="btn btn-success" id="show3" type="button">+ Add More</button></td>
 							
 							</tr>
 							
 								<tr id="p4"  style="display:none;">
+                                <script>
+                                    function calculatePrice()
+{
+
+                                        var quantity5 = $("#quantity5").val();
+                                        var price5 =  $("#price5").val();
+                                        
+
+                                        //calculate final cost
+                                        var total5 = (quantity5 * price5);
+
+                                        console.log(total5);
+                                        //print value to orderTotal
+                                        $("#orderTotal5").val(total5);
+}
+                                </script>
 								<td><input class="itemRow" type="checkbox"></td>
 								<td><input type="text"  name="productcode5"  class="form-control" autocomplete="off"></td>
 								<td><input type="text" class="form-control" name="productname5"  autocomplete="off"></td>			
-								<td><input type="number"  name="quantity5" class="form-control quantity" autocomplete="off"></td>
-								<td><input type="number"  name="price5"  class="form-control price" autocomplete="off"></td>
-								<td><input type="number"  name="total5"  class="form-control total" autocomplete="off"></td>
-                                <td><button class="btn btn-danger delete"  type="button" id="hide4">- Delete</button><button class="btn btn-success" id="show4" type="button">+ Add More</button></td>
+								<td><input type="number"  name="quantity5" id="quantity5" class="form-control quantity" autocomplete="off"  value="1"></td>
+								<td><input type="number"  name="price5" id="price5"  class="form-control price" autocomplete="off"></td>
+								<td><input type="number"  name="total5" id="orderTotal5" class="form-control total" autocomplete="off"></td>
+                                <td><button class="btn btn-primary" onclick="calculatePrice()" type="button">Update</button><button class="btn btn-danger delete"  type="button" id="hide4">- Delete</button><button class="btn btn-success" id="show4" type="button">+ Add More</button></td>
 							
 							</tr>
 							
 							<tr id="p5"  style="display:none;">
+                            <script>
+                                    function calculatePrice()
+{
+
+                                        var quantity6 = $("#quantity6").val();
+                                        var price6 =  $("#price6").val();
+                                        
+
+                                        //calculate final cost
+                                        var total6 = (quantity6 * price6);
+
+                                        console.log(total6);
+                                        //print value to orderTotal
+                                        $("#orderTotal6").val(total6);
+}
+                                </script>
 								<td><input class="itemRow" type="checkbox"></td>
 								<td><input type="text"  name="productcode6"  class="form-control" autocomplete="off"></td>
 								<td><input type="text" class="form-control" name="productname6"  autocomplete="off"></td>			
-								<td><input type="number"  name="quantity6" class="form-control quantity" autocomplete="off"></td>
-								<td><input type="number"  name="price6"  class="form-control price" autocomplete="off"></td>
-								<td><input type="number"  name="total6"  class="form-control total" autocomplete="off"></td>
-                                	<td><button class="btn btn-danger delete"  type="button" id="hide5">- Delete</button><button class="btn btn-success" id="show5" type="button">+ Add More</button></td>
+								<td><input type="number"  name="quantity6" id="quantity6"  class="form-control quantity" autocomplete="off"  value="1"></td>
+								<td><input type="number"  name="price6" id="price6"  class="form-control price" autocomplete="off"></td>
+								<td><input type="number"  name="total6" id="orderTotal6"  class="form-control readonly total"  readonly autocomplete="off"></td>
+                                	<td><button class="btn btn-primary" onclick="calculatePrice6()" type="button">Update</button><button class="btn btn-danger delete"  type="button" id="hide5">- Delete</button><button class="btn btn-success" id="show5" type="button">+ Add More</button></td>
 							
 							</tr>
 							
 								<tr id="p6"  style="display:none;">
+                                <script>
+                                    function calculatePrice()
+{
+
+                                        var quantity7 = $("#quantity7").val();
+                                        var price7 =  $("#price7").val();
+                                        
+
+                                        //calculate final cost
+                                        var total7 = (quantity7 * price7);
+
+                                        console.log(total7);
+                                        //print value to orderTotal
+                                        $("#orderTotal7").val(total7);
+}
+                                </script>
 								<td><input class="itemRow" type="checkbox"></td>
 								<td><input type="text"  name="productcode7"  class="form-control" autocomplete="off"></td>
 								<td><input type="text" class="form-control" name="productname7"  autocomplete="off"></td>			
-								<td><input type="number"  name="quantity7" class="form-control quantity" autocomplete="off"></td>
-								<td><input type="number"  name="price7"  class="form-control price" autocomplete="off"></td>
-								<td><input type="number"  name="total7"  class="form-control total" autocomplete="off"></td>
-                                	<td><button class="btn btn-danger delete"  type="button" id="hide6">- Delete</button><button class="btn btn-success" id="show6" type="button">+ Add More</button></td>
+								<td><input type="number"  name="quantity7" id="quantity7" class="form-control quantity" autocomplete="off"  value="1"></td>
+								<td><input type="number"  name="price7"  id="price7"  class="form-control price" autocomplete="off"></td>
+								<td><input type="number"  name="total7" id="orderTotal7"   class="form-control total" readonly autocomplete="off"></td>
+                                	<td><button class="btn btn-primary" onclick="calculatePrice7()" type="button">Update</button><button class="btn btn-danger delete"  type="button" id="hide6">- Delete</button><button class="btn btn-success" id="show6" type="button">+ Add More</button></td>
 							
 							</tr>
 							
 								<tr id="p7"  style="display:none;">
+                                <script>
+                                    function calculatePrice8()
+{
+
+                                        var quantity8 = $("#quantity8").val();
+                                        var price8 =  $("#price8").val();
+                                        
+
+                                        //calculate final cost
+                                        var total8 = (quantity8 * price8);
+
+                                        console.log(total8);
+                                        //print value to orderTotal
+                                        $("#orderTotal").val(total8);
+}
+                                </script>
 								<td><input class="itemRow" type="checkbox"></td>
 								<td><input type="text"  name="productcode8"  class="form-control" autocomplete="off"></td>
 								<td><input type="text" class="form-control" name="productname8"  autocomplete="off"></td>			
-								<td><input type="number"  name="quantity8" class="form-control quantity" autocomplete="off"></td>
-								<td><input type="number"  name="price8"  class="form-control price" autocomplete="off"></td>
-								<td><input type="number"  name="total8"  class="form-control total" autocomplete="off"></td>
-									<td><button class="btn btn-danger delete"  type="button" id="hide7">- Delete</button><button class="btn btn-success" id="show7" type="button">+ Add More</button></td>
+								<td><input type="number"  name="quantity8" id="quantity8" class="form-control quantity" autocomplete="off"  value="1"></td>
+								<td><input type="number"  name="price8" id="price8"   class="form-control price" autocomplete="off"></td>
+								<td><input type="number"  name="total8" id="orderTotal" readonly  class="form-control total" autocomplete="off"></td>
+									<td><button class="btn btn-primary" onclick="calculatePrice8()" type="button">Update</button><button class="btn btn-danger delete"  type="button" id="hide7">- Delete</button><button class="btn btn-success" id="show7" type="button">+ Add More</button></td>
 							
 							</tr>
 								<tr id="p8"  style="display:none;">
+                                <script>
+                                    function calculatePrice9()
+{
+
+                                        var quantity9 = $("#quantity9").val();
+                                        var price9 =  $("#price9").val();
+                                        
+
+                                        //calculate final cost
+                                        var total9 = (quantity9 * price9);
+
+                                        console.log(total9);
+                                        //print value to orderTotal
+                                        $("#orderTotal9").val(total9);
+}
+                                </script>
 								<td><input class="itemRow" type="checkbox"></td>
 								<td><input type="text"  name="productcode9"  class="form-control" autocomplete="off"></td>
 								<td><input type="text" class="form-control" name="productname9"  autocomplete="off"></td>			
-								<td><input type="number"  name="quantity9" class="form-control quantity" autocomplete="off"></td>
-								<td><input type="number"  name="price9"  class="form-control price" autocomplete="off"></td>
-								<td><input type="number"  name="total9"  class="form-control total" autocomplete="off"></td>
-								 <td><button class="btn btn-danger delete"  type="button" id="hide8">- Delete</button><button class="btn btn-success" id="show8" type="button">+ Add More</button></td>
+								<td><input type="number"  name="quantity9" id="quantity9" class="form-control quantity" autocomplete="off"  value="1"></td>
+								<td><input type="number"  name="price9" id="price9"   class="form-control price" autocomplete="off"></td>
+								<td><input type="number"  name="total9" id="orderTotal9"  class="form-control total" readonly autocomplete="off"></td>
+								 <td><button class="btn btn-primary" onclick="calculatePrice9()" type="button">Update</button><button class="btn btn-danger delete"  type="button" id="hide8">- Delete</button><button class="btn btn-success" id="show8" type="button">+ Add More</button></td>
 							
 							</tr>
 								
@@ -635,7 +819,7 @@ $(document).ready(function(){
 							<div class="form-group">
 								<label>Total: &nbsp;</label>
 								<div class="input-group">
-									<input value="<?php echo $invoiceValues['order_total_after_tax']; ?>" type="number" class="form-control" name="totalAftertax" id="totalAftertax" placeholder="Total">
+									<input id="total" value="<?php echo $invoiceValues['order_total_after_tax']; ?>" type="number" class="form-control" name="totalAftertax" id="totalAftertax" placeholder="Total">
 								</div>
 							</div>
 							<br>
