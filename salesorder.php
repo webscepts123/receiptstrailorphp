@@ -123,6 +123,64 @@ $(document).ready(function(){
 
 <script>
 $(document).ready(function(){
+  $("#hide20").click(function(){
+    $("#pe11").hide();
+  });
+  $("#show20").click(function(){
+    $("#pe1").show();
+  });
+});
+</script>
+
+
+<script>
+$(document).ready(function(){
+  $("#hide21").click(function(){
+    $("#pe12").hide();
+  });
+  $("#show21").click(function(){
+    $("#pe2").show();
+  });
+});
+</script>
+
+
+<script>
+$(document).ready(function(){
+  $("#hide22").click(function(){
+    $("#pe13").hide();
+  });
+  $("#show22").click(function(){
+    $("#pe3").show();
+  });
+});
+</script>
+
+<script>
+$(document).ready(function(){
+  $("#hide23").click(function(){
+    $("#pe14").hide();
+  });
+  $("#show23").click(function(){
+    $("#pe4").show();
+  });
+});
+</script>
+
+<script>
+$(document).ready(function(){
+  $("#hide24").click(function(){
+    $("#pe15").hide();
+  });
+  $("#show24").click(function(){
+    $("#pe5").show();
+  });
+});
+</script>
+
+
+<script>
+$(document).ready(function(){
     $('.search-box input[type="text"]').on("keyup input", function(){
         /* Get input value on change */
         var inputVal = $(this).val();
@@ -154,10 +212,10 @@ $(document).ready(function(){
     padding: 51px;
 ">
       	<form action="addorderental.php" method="post" name="form1">
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label>ID Number</label>
                 <input  type="nubmer" name="idno" class="form-control" placeholder="">
-            </div>
+            </div> -->
             <br>
             
             
@@ -190,7 +248,7 @@ $(document).ready(function(){
 
         <br>
         
-             <div class="container">
+            <!-- <div class="container">
                   <div class="row">
                     <div class="col">
                         <div class="form-group">
@@ -207,30 +265,240 @@ $(document).ready(function(){
 
                   </div>
             </div>
-        <br>
+        <br> -->
 
 		<div class="card">
             
               <div class="card-body">
                 
-                <a class="btn btn-app bg-secondary">
+                <a id="show20"  class="btn btn-app bg-secondary">
                   <i class="fas fa-barcode"></i> Coat
                 </a>
-                <a class="btn btn-app bg-success">
+                <a  id="show21"  class="btn btn-app bg-success">
                   <i class="fas fa-users"></i> West Coat
                 </a>
-                <a class="btn btn-app bg-danger">
+                <a id="show22" class="btn btn-app bg-danger">
                   <i class="fas fa-inbox"></i> Shirt
                 </a>
-                <a class="btn btn-app bg-warning">
+                <a id="show23" class="btn btn-app bg-warning">
                   <i class="fas fa-envelope"></i> Trouser
                 </a>
-                <a class="btn btn-app bg-info">
+                <a  id="show24" class="btn btn-app bg-info">
                   <i class="fas fa-heart"></i> Shorts
                 </a>
               </div>
+
+              <div id="pe1" class="container" style="display:none;">
+                 <label>Hight, york, half hand with york</label>
+                 <input type="text" name="hight" class="form-control">
+                 <br>
+                 <br>
+
+                 <label>full hand with york</label>
+                 <input type="text" name="hight" class="form-control">
+                 <br>
+                 <br>
+
+                 <label>full hand, chest</label>
+                 <input type="text" name="hight" class="form-control">
+                 <br>
+                 <br>
+
+                 <label>stomach</label>
+                 <input type="text" name="hight" class="form-control">
+
+                 <input>
+                 <br>
+                 <br>
+
+                 <label>seat</label>
+                 <input type="text" name="hight" class="form-control">
+                 <br>
+                 <br>
+
+                 <label>arm</label>
+                 <input type="text" name="hight" class="form-control">
+                 <br>
+                 <br>
+
+                 <label>l-bow, fold</label>
+                 <input type="text" name="hight" class="form-control">
+                 <br>
+                 <br>
+             </div>
+
+             <div id="pe2" class="container" style="display:none;">
+                 <label>Hight</label>
+                 <input type="text" name="hight" class="form-control">
+                 <br>
+                 <br>
+
+                 <label>chest</label>
+                 <input type="text" name="hight" class="form-control">
+                 <br>
+                 <br>
+
+                 <label>stomach</label>
+                 <input type="text" name="hight" class="form-control">
+                 <br>
+                 <br>
+
+                 <label>seat</label>
+                 <input type="text" name="hight" class="form-control">
+                 <br>
+                 <br>
+
+             
+             </div>
+
+             <div id="pe3" class="container" style="display:none;">
+                 <label>Hight</label>
+                 <input type="text" name="hight" class="form-control">
+                 <br>
+                 <br>
+
+                 <label>york</label>
+                 <input type="text" name="hight" class="form-control">
+                 <br>
+                 <br>
+
+                 <label>hand</label>
+                 <input type="text" name="hight" class="form-control">
+                 <br>
+                 <br>
+
+                 <label>chest</label>
+                 <input type="text" name="hight" class="form-control">
+                 <br>
+                 <br>
+
+                 <label>Stomach</label>
+                 <input type="text" name="hight" class="form-control">
+                 <br>
+                 <br>
+
+                 <label>Seat</label>
+                 <input type="text" name="hight" class="form-control">
+                 <br>
+                 <br>
+
+
+                 <label>Collar</label>
+                 <input type="text" name="hight" class="form-control">
+                 <br>
+                 <br>
+
+                 <label>arm</label>
+                 <input type="text" name="hight" class="form-control">
+                 <br>
+                 <br>
+
+                 <label>I-bow</label>
+                 <input type="text" name="hight" class="form-control">
+                 <br>
+                 <br>
+
+                 <label>Fold Cutting</label>
+                 <input type="text" name="hight" class="form-control">
+                 <br>
+                 <br>
+
+
+             
+            </div>
+
+
+
               <!-- /.card-body -->
             </div>
+
+            <div id="pe4" class="container" style="display:none;">
+                 <label>Hip</label>
+                 <input type="text" name="hight" class="form-control">
+                 <br>
+                 <br>
+
+                 <label>seat</label>
+                 <input type="text" name="hight" class="form-control">
+                 <br>
+                 <br>
+
+                 <label>Thighies</label>
+                 <input type="text" name="hight" class="form-control">
+                 <br>
+                 <br>
+
+                 <label>knee</label>
+                 <input type="text" name="hight" class="form-control">
+                 <br>
+                 <br>
+
+                 <label>fold</label>
+                 <input type="text" name="hight" class="form-control">
+                 <br>
+                 <br>
+
+                 <label>zipper</label>
+                 <input type="text" name="hight" class="form-control">
+
+                 <br>
+                 <br>
+
+                 <label>hight Cutting </label>
+                 <input type="text" name="hight" class="form-control">
+                 <br>
+                 <br>
+
+
+                 <label>hight </label>
+                 <input type="text" name="hight" class="form-control">
+                 <br>
+                 <br>
+
+                 <label>Hip </label>
+                 <input type="text" name="hight" class="form-control">
+                 <br>
+                 <br>
+
+             
+             </div>
+
+             <div id="pe2" class="container" style="display:none;">
+                 <label>Hip</label>
+                 <input type="text" name="hight" class="form-control">
+
+                 <br>
+                 <br>
+
+                 <label>seat</label>
+                 <input type="text" name="hight" class="form-control">
+                 <br>
+                 <br>
+
+                 <label>Thighies</label>
+                 <input type="text" name="hight" class="form-control">
+                 <br>
+                 <br>
+
+                 <label>fold</label>
+                 <input type="text" name="hight" class="form-control">
+                 <br>
+                 <br>
+
+                 <label>zippper</label>
+                 <input type="text" name="hight" class="form-control">
+                 <br>
+                 <br>
+
+                 <label>Hight</label>
+                 <input type="text" name="hight" class="form-control">
+                 <br>
+                 <br>
+
+                
+             
+             </div>
+
         
        	<div class="row">
 		      		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
