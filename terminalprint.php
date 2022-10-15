@@ -113,10 +113,7 @@ img {
                 echo "<td style='width:10%;'>"; 
                 echo $singleRow['productname']; "</td>";
                 echo "<td style='width:10%;'>";
-                echo $singleRow['quantity']; "</td>";
-                echo "<td  style='width:10%;'>"; 
-                echo $singleRow['price'];"</td>";
-                echo "<td style='width:10%;'>";
+               
                 echo $singleRow['total'];"</td>";
          echo  "</tr>";
                    }
@@ -138,11 +135,7 @@ img {
                 echo $singleRow['productcode2']; "</td>";
                 echo "<td style='width:50%;'>"; 
                 echo $singleRow['productname2']; "</td>";
-                echo "<td style='width:10%;'>";
-                echo $singleRow['quantity2']; "</td>";
-                echo "<td  style='width:10%;'>"; 
-                echo $singleRow['price2'];"</td>";
-                echo "<td style='width:10%;'>";
+              
                 echo $singleRow['total2'];"</td>";
          echo  "</tr>";
                    }
@@ -166,10 +159,7 @@ img {
                 echo "<td style='width:50%;'>"; 
                 echo $singleRow['productname3']; "</td>";
                 echo "<td style='width:10%;'>";
-                echo $singleRow['quantity3']; "</td>";
-                echo "<td  style='width:10%;'>"; 
-                echo $singleRow['price3'];"</td>";
-                echo "<td style='width:10%;'>";
+               
                 echo $singleRow['total3'];"</td>";
          echo  "</tr>";
                    }
@@ -193,10 +183,7 @@ img {
                 echo "<td style='width:50%;'>"; 
                 echo $singleRow['productname4']; "</td>";
                 echo "<td style='width:10%;'>";
-                echo $singleRow['quantity4']; "</td>";
-                echo "<td  style='width:10%;'>"; 
-                echo $singleRow['price4'];"</td>";
-                echo "<td style='width:10%;'>";
+              
                 echo $singleRow['total4'];"</td>";
          echo  "</tr>";
                    }
@@ -220,10 +207,7 @@ img {
                 echo "<td style='width:50%;'>"; 
                 echo $singleRow['productname5']; "</td>";
                 echo "<td style='width:10%;'>";
-                echo $singleRow['quantity5']; "</td>";
-                echo "<td  style='width:10%;'>"; 
-                echo $singleRow['price5'];"</td>";
-                echo "<td style='width:10%;'>";
+                
                 echo $singleRow['total5'];"</td>";
          echo  "</tr>";
                    }
@@ -245,10 +229,7 @@ img {
                 echo "<td  style='width:10%;'>"; 
                 echo $singleRow['productcode6']; "</td>";
                 echo "<td style='width:50%;'>"; 
-                echo $singleRow['productname6']; "</td>";
-                echo "<td style='width:10%;'>";
-                echo $singleRow['quantity6']; "</td>";
-                echo "<td  style='width:10%;'>"; 
+          
                 echo $singleRow['price6'];"</td>";
                 echo "<td style='width:10%;'>";
                 echo $singleRow['total6'];"</td>";
@@ -273,10 +254,7 @@ img {
                 echo $singleRow['productcode7']; "</td>";
                 echo "<td style='width:50%;'>"; 
                 echo $singleRow['productname7']; "</td>";
-                echo "<td style='width:10%;'>";
-                echo $singleRow['quantity7']; "</td>";
-                echo "<td  style='width:10%;'>"; 
-                echo $singleRow['price7'];"</td>";
+               
                 echo "<td style='width:10%;'>";
                 echo $singleRow['total7'];"</td>";
          echo  "</tr>";
@@ -301,10 +279,7 @@ img {
                 echo $singleRow['productcode8']; "</td>";
                 echo "<td style='width:50%;'>"; 
                 echo $singleRow['productname8']; "</td>";
-                echo "<td style='width:10%;'>";
-                echo $singleRow['quantity8']; "</td>";
-                echo "<td  style='width:10%;'>"; 
-                echo $singleRow['price8'];"</td>";
+                
                 echo "<td style='width:10%;'>";
                 echo $singleRow['total8'];"</td>";
          echo  "</tr>";
@@ -328,9 +303,7 @@ img {
                 echo "<td style='width:50%;'>"; 
                 echo $singleRow['productname9']; "</td>";
                 echo "<td style='width:10%;'>";
-                echo $singleRow['quantity9']; "</td>";
-                echo "<td  style='width:10%;'>"; 
-                echo $singleRow['price9'];"</td>";
+              ;
                 echo "<td style='width:10%;'>";
                 echo $singleRow['total9'];"</td>";
          echo  "</tr>";
