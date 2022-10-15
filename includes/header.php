@@ -273,9 +273,15 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="addorderr.php" class="nav-link">
+                <a href="addrental.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Add Order</p>
+                  <p>Add Rental Order</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="salesorder.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Sales Order</p>
                 </a>
               </li>
               <li class="nav-item">
