@@ -8,8 +8,26 @@ include_once("connection.php");
 $result = mysqli_query($mysqli, "SELECT * FROM rentcustomer ORDER BY id DESC");
 ?>
 
-<button class="btn btn-danger delete" onclick="window.location.href='addrental.php'  type="button" id="hide">Add Sales</button>
-<button class="btn btn-danger delete" onclick="window.location.href='salesorder.php'  type="button" id="hide">Add Rental</button>
+
+<div class="card">
+	<div class=" container ">
+		<a class="btn btn-primary" href='addrental.php'>Add Sales</a>
+		<a class="btn btn-primary" href='salesorder.php'>Add Rental</a>
+	</div>
+</div>
+
+
+<webview src="addrental.php" httpreferrer="addrental.php"></webview>
+
+<webview src="addrental.php" httpreferrer="addrental.php"></webview>
+
+
+
+<webview src="salesorder.php" allowpopups></webview>
+
+
+
+
 
   
   
