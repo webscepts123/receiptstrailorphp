@@ -550,7 +550,7 @@ $(document).ready(function(){
 						
 							<tr>
                                 <script>
-                                    function calculatePrice()
+                                    function calculatePrice1()
 {
 
                                         var quantity = $("#quantity").val();
@@ -574,14 +574,14 @@ $(document).ready(function(){
                                
 								<td><input type="number"  name="total"  class="form-control total" id="orderTotal" autocomplete="off" readonly ></td>
                                  
-									<td><button class="btn btn-primary" onclick="calculatePrice()" type="button">Update</button><button class="btn btn-danger delete"  type="button" id="hide">- Delete</button><button class="btn btn-success" id="show" type="button">+ Add More</button></td>
+									<td><button class="btn btn-primary" onclick="calculatePrice1()" type="button">Update</button><button class="btn btn-danger delete"  type="button" id="hide">- Delete</button><button class="btn btn-success" id="show" type="button">+ Add More</button></td>
 							
 							</tr>
 							
 								<tr id="p"  style="display:none;">
 
                                 <script>
-                                    function calculatePrice()
+                                    function calculatePrice2()
 {
 
                                         var quantity2 = $("#quantity2").val();
@@ -602,14 +602,14 @@ $(document).ready(function(){
 								<td><input type="number"  name="quantity2"  id="quantity2"  class="form-control quantity" autocomplete="off" value="1"></td>
 								<td><input type="number"  name="price2"  id="price2" class="form-control price" autocomplete="off"></td>
 								<td><input type="number"  name="total2"   id="orderTotal2" class="form-control total" autocomplete="off"></td>
-									<td><button class="btn btn-primary" onclick="calculatePrice()" type="button">Update</button><button class="btn btn-danger delete"  type="button" id="hide1">- Delete</button><button class="btn btn-success" id="show1" type="button">+ Add More</button></td>
+									<td><button class="btn btn-primary" onclick="calculatePrice2()" type="button">Update</button><button class="btn btn-danger delete"  type="button" id="hide1">- Delete</button><button class="btn btn-success" id="show1" type="button">+ Add More</button></td>
 							
 							</tr>	
 								
 								
 							<tr id="p2"  style="display:none;">
                             <script>
-                                    function calculatePrice()
+                                    function calculatePrice3()
 {
 
                                         var quantity3 = $("#quantity3").val();
@@ -630,14 +630,14 @@ $(document).ready(function(){
 								<td><input type="number"  name="quantity3"  id="quantity3" class="form-control quantity" autocomplete="off"  value="1"></td>
 								<td><input type="number"  name="price3" id="price3"   readonly  class="form-control price" autocomplete="off"></td>
 								<td><input type="number"  name="total3" id="orderTotal3"  class="form-control total" autocomplete="off"></td>
-								<td><button class="btn btn-primary" onclick="calculatePrice()" type="button">Update</button><button class="btn btn-danger delete"  type="button" id="hide2">- Delete</button><button class="btn btn-success" id="show2" type="button">+ Add More</button></td>
+								<td><button class="btn btn-primary" onclick="calculatePrice3()" type="button">Update</button><button class="btn btn-danger delete"  type="button" id="hide2">- Delete</button><button class="btn btn-success" id="show2" type="button">+ Add More</button></td>
 							
 							</tr>	
 								
 								
 							<tr id="p3"  style="display:none;" >
                             <script>
-                                    function calculatePrice()
+                                    function calculatePrice4()
 {
 
                                         var quantity4 = $("#quantity4").val();
@@ -658,7 +658,7 @@ $(document).ready(function(){
 								<td><input type="number"  name="quantity4" id="quantity4"   class="form-control quantity" autocomplete="off"  value="1"></td>
 								<td><input type="number"  name="price4" id="price4"  readonly class="form-control price" autocomplete="off"></td>
 								<td><input type="number"  name="total4" id="orderTotal4" class="form-control total" autocomplete="off"></td>
-	                            <td><button class="btn btn-primary" onclick="calculatePrice()" type="button">Update</button><button class="btn btn-danger delete"  type="button" id="hide3">- Delete</button><button class="btn btn-success" id="show3" type="button">+ Add More</button></td>
+	                            <td><button class="btn btn-primary" onclick="calculatePrice4()" type="button">Update</button><button class="btn btn-danger delete"  type="button" id="hide3">- Delete</button><button class="btn btn-success" id="show3" type="button">+ Add More</button></td>
 							
 							</tr>
 							
@@ -685,7 +685,7 @@ $(document).ready(function(){
 								<td><input type="number"  name="quantity5" id="quantity5" class="form-control quantity" autocomplete="off"  value="1"></td>
 								<td><input type="number"  name="price5" id="price5"  class="form-control price" autocomplete="off"></td>
 								<td><input type="number"  name="total5" id="orderTotal5" class="form-control total" autocomplete="off"></td>
-                                <td><button class="btn btn-primary" onclick="calculatePrice()" type="button">Update</button><button class="btn btn-danger delete"  type="button" id="hide4">- Delete</button><button class="btn btn-success" id="show4" type="button">+ Add More</button></td>
+                                <td><button class="btn btn-primary" onclick="calculatePrice5()" type="button">Update</button><button class="btn btn-danger delete"  type="button" id="hide4">- Delete</button><button class="btn btn-success" id="show4" type="button">+ Add More</button></td>
 							
 							</tr>
 							
