@@ -146,7 +146,7 @@ $(document).ready(function(){
 </script>
 
 <div class="container">
-  <h3>Add Order</h3>  
+  <h3>Add Rental Order</h3>  
     
 </div>
 
