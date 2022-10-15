@@ -8,11 +8,18 @@ include_once("connection.php");
 $result = mysqli_query($mysqli, "SELECT * FROM rentcustomer ORDER BY id DESC");
 ?>
 
-
+<br>
+<br>
 <div class="card">
 	<div class=" container ">
+		<br>
+		<br>
 		<a class="btn btn-primary" href='addrental.php'>Add Sales</a>
 		<a class="btn btn-primary" href='salesorder.php'>Add Rental</a>
+
+	    <br>
+		<br>
+		<br>
 	</div>
 </div>
 
