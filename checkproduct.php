@@ -23,7 +23,7 @@ $singleRow = mysqli_fetch_assoc($result);
         <label>Enter Code</label>
         <br>
         <br>
-        <input type="text" class="form-control"name="sku" placeholder="Enter Code " required value="<?php if(isset($_GET['code'])){ echo $_GET['code']; } ?>">
+        <input type="text" class="form-control"name="code" placeholder="Enter Code " required value="<?php if(isset($_GET['code'])){ echo $_GET['code']; } ?>">
         <br>
         <input type="submit" class="btn btn-success" value="Check">
         <br>

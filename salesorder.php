@@ -124,7 +124,7 @@ $(document).ready(function(){
 <script>
 $(document).ready(function(){
   $("#hide20").click(function(){
-    $("#pe1").hide();
+    $("#per1").hide();
   });
   $("#show20").click(function(){
     $("#pe1").show();
@@ -136,7 +136,7 @@ $(document).ready(function(){
 <script>
 $(document).ready(function(){
   $("#hide21").click(function(){
-    $("#pe12").hide();
+    $("#per2").hide();
   });
   $("#show21").click(function(){
     $("#pe2").show();
@@ -148,7 +148,7 @@ $(document).ready(function(){
 <script>
 $(document).ready(function(){
   $("#hide22").click(function(){
-    $("#pe13").hide();
+    $("#per3").hide();
   });
   $("#show22").click(function(){
     $("#pe3").show();
@@ -159,7 +159,7 @@ $(document).ready(function(){
 <script>
 $(document).ready(function(){
   $("#hide23").click(function(){
-    $("#pe14").hide();
+    $("#per4").hide();
   });
   $("#show23").click(function(){
     $("#pe4").show();
@@ -170,7 +170,7 @@ $(document).ready(function(){
 <script>
 $(document).ready(function(){
   $("#hide24").click(function(){
-    $("#pe15").hide();
+    $("#per5").hide();
   });
   $("#show24").click(function(){
     $("#pe5").show();
@@ -248,51 +248,33 @@ $(document).ready(function(){
 
         <br>
         
-            <!-- <div class="container">
-                  <div class="row">
-                    <div class="col">
-                        <div class="form-group">
-                          <label>Date</label>
-                          <input type="date" name="date" class="form-control" placeholder="Name">
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="form-group">
-                          <label>Due Date</label>
-                          <input type="date" name="duedate" class="form-control" placeholder="Name">
-                        </div>
-                    </div>
-
-                  </div>
-            </div>
-        <br> -->
 
 		<div class="card">
             
               <div class="card-body">
                 
-                <a id="show20"  class="btn btn-app bg-secondary">
+                <a   class="btn btn-app bg-secondary">
                   <i class="fas fa-barcode"></i> Coat
                 </a>
-                <a  id="show21"  class="btn btn-app bg-success">
+                <a  id="show20"  class="btn btn-app bg-success">
                   <i class="fas fa-users"></i> West Coat
                 </a>
-                <a id="show22" class="btn btn-app bg-danger">
+                <a id="show21" class="btn btn-app bg-danger">
                   <i class="fas fa-inbox"></i> Shirt
                 </a>
-                <a id="show23" class="btn btn-app bg-warning">
+                <a id="show22" class="btn btn-app bg-warning">
                   <i class="fas fa-envelope"></i> Trouser
                 </a>
-                <a  id="show24" class="btn btn-app bg-info">
+                <a  id="show23" class="btn btn-app bg-info">
                   <i class="fas fa-heart"></i> Shorts
                 </a>
               </div>
 
 
-              <div id="pe1" class="container" style="display:none;">
+              <div  class="container" >
 
                   <br>
-                  <a id="show20"  class="btn btn-app bg-secondary">
+                  <a id="hide20"  class="btn btn-app bg-secondary">
                      Hide
                   </a>
                   <br>
@@ -334,7 +316,7 @@ $(document).ready(function(){
                  <br>
              </div>
 
-             <div id="pe2" class="container" style="display:none;">
+             <div id="per1" class="container" style="display:none;">
                   <br>
                   <a id="hide11"  class="btn btn-app bg-secondary">
                     Hide
@@ -364,9 +346,9 @@ $(document).ready(function(){
              
              </div>
 
-             <div id="pe3" class="container" style="display:none;">
+             <div id="pe1" class="container" style="display:none;">
                 <br>
-                  <a id="hide12"  class="btn btn-app bg-secondary">
+                  <a id="hide20"  class="btn btn-app bg-secondary">
                     Hide
                   </a>
                 <br>
@@ -407,7 +389,7 @@ $(document).ready(function(){
                  <br>
                  <br>
 
-                 <label>arm</label>
+                 <label>Arm</label>
                  <input type="text" name="hight" class="form-control">
                  <br>
                  <br>
@@ -431,7 +413,7 @@ $(document).ready(function(){
               <!-- /.card-body -->
             </div>
 
-            <div id="pe4" class="container" style="display:none;">
+            <div id="per2" class="container" style="display:none;">
             <br>
                   <a id="hide13"  class="btn btn-app bg-secondary">
                     </i> Hide
@@ -443,7 +425,7 @@ $(document).ready(function(){
                  <br>
                  <br>
 
-                 <label>seat</label>
+                 <label>Seat</label>
                  <input type="text" name="hight" class="form-control">
                  <br>
                  <br>
@@ -469,13 +451,13 @@ $(document).ready(function(){
                  <br>
                  <br>
 
-                 <label>hight Cutting </label>
+                 <label>Hight Cutting </label>
                  <input type="text" name="hight" class="form-control">
                  <br>
                  <br>
 
 
-                 <label>hight </label>
+                 <label>Hight </label>
                  <input type="text" name="hight" class="form-control">
                  <br>
                  <br>
@@ -488,7 +470,7 @@ $(document).ready(function(){
              
              </div>
 
-             <div id="pe2" class="container" style="display:none;">
+             <div id="pe3" class="container" style="display:none;">
              <br>
                   <a id="hide14"  class="btn btn-app bg-secondary">
                     <i class="fas fa-barcode"></i> Hide
@@ -601,7 +583,7 @@ $(document).ready(function(){
 								<td><input type="text" class="form-control" name="productname2"  autocomplete="off"></td>			
 								<td><input type="number"  name="quantity2"  id="quantity2"  class="form-control quantity" autocomplete="off" value="1"></td>
 								<td><input type="number"  name="price2"  id="price2" class="form-control price" autocomplete="off"></td>
-								<td><input type="number"  name="total2"   id="orderTotal2" class="form-control total" autocomplete="off"></td>
+								<td><input type="number"  name="total2"   id="orderTotal2" class="form-control total" readonly autocomplete="off"></td>
 									<td><button class="btn btn-primary" onclick="calculatePrice2()" type="button">Update</button><button class="btn btn-danger delete"  type="button" id="hide1">- Delete</button><button class="btn btn-success" id="show1" type="button">+ Add More</button></td>
 							
 							</tr>	
@@ -628,8 +610,8 @@ $(document).ready(function(){
 								<td><input type="text"  name="productcode3"  class="form-control" autocomplete="off"></td>
 								<td><input type="text" class="form-control" name="productname3"  autocomplete="off"></td>			
 								<td><input type="number"  name="quantity3"  id="quantity3" class="form-control quantity" autocomplete="off"  value="1"></td>
-								<td><input type="number"  name="price3" id="price3"   readonly  class="form-control price" autocomplete="off"></td>
-								<td><input type="number"  name="total3" id="orderTotal3"  class="form-control total" autocomplete="off"></td>
+								<td><input type="number"  name="price3" id="price3"   class="form-control price" autocomplete="off"></td>
+								<td><input type="number"  name="total3" id="orderTotal3" readonly  class="form-control total" autocomplete="off"></td>
 								<td><button class="btn btn-primary" onclick="calculatePrice3()" type="button">Update</button><button class="btn btn-danger delete"  type="button" id="hide2">- Delete</button><button class="btn btn-success" id="show2" type="button">+ Add More</button></td>
 							
 							</tr>	
@@ -656,8 +638,8 @@ $(document).ready(function(){
 								<td><input type="text"  name="productcode4"  class="form-control" autocomplete="off"></td>
 								<td><input type="text" class="form-control" name="productname4"  autocomplete="off"></td>			
 								<td><input type="number"  name="quantity4" id="quantity4"   class="form-control quantity" autocomplete="off"  value="1"></td>
-								<td><input type="number"  name="price4" id="price4"  readonly class="form-control price" autocomplete="off"></td>
-								<td><input type="number"  name="total4" id="orderTotal4" class="form-control total" autocomplete="off"></td>
+								<td><input type="number"  name="price4" id="price4"   class="form-control price" autocomplete="off"></td>
+								<td><input type="number"  name="total4" id="orderTotal4" readonly class="form-control total" autocomplete="off"></td>
 	                            <td><button class="btn btn-primary" onclick="calculatePrice4()" type="button">Update</button><button class="btn btn-danger delete"  type="button" id="hide3">- Delete</button><button class="btn btn-success" id="show3" type="button">+ Add More</button></td>
 							
 							</tr>
@@ -711,7 +693,7 @@ $(document).ready(function(){
 								<td><input type="text" class="form-control" name="productname6"  autocomplete="off"></td>			
 								<td><input type="number"  name="quantity6" id="quantity6"  class="form-control quantity" autocomplete="off"  value="1"></td>
 								<td><input type="number"  name="price6" id="price6"  class="form-control price" autocomplete="off"></td>
-								<td><input type="number"  name="total6" id="orderTotal6"  class="form-control readonly total"  readonly autocomplete="off"></td>
+								<td><input type="number"  name="total6" id="orderTotal6"  class="form-control  total"  readonly autocomplete="off"></td>
                                 	<td><button class="btn btn-primary" onclick="calculatePrice6()" type="button">Update</button><button class="btn btn-danger delete"  type="button" id="hide5">- Delete</button><button class="btn btn-success" id="show5" type="button">+ Add More</button></td>
 							
 							</tr>
@@ -757,7 +739,7 @@ $(document).ready(function(){
 
                                         console.log(total8);
                                         //print value to orderTotal
-                                        $("#orderTotal").val(total8);
+                                        $("#orderTotal8").val(total8);
 }
                                 </script>
 								<td><input class="itemRow" type="checkbox"></td>
@@ -765,7 +747,7 @@ $(document).ready(function(){
 								<td><input type="text" class="form-control" name="productname8"  autocomplete="off"></td>			
 								<td><input type="number"  name="quantity8" id="quantity8" class="form-control quantity" autocomplete="off"  value="1"></td>
 								<td><input type="number"  name="price8" id="price8"   class="form-control price" autocomplete="off"></td>
-								<td><input type="number"  name="total8" id="orderTotal" readonly  class="form-control total" autocomplete="off"></td>
+								<td><input type="number"  name="total8" id="orderTotal8" readonly  class="form-control total" autocomplete="off"></td>
 									<td><button class="btn btn-primary" onclick="calculatePrice8()" type="button">Update</button><button class="btn btn-danger delete"  type="button" id="hide7">- Delete</button><button class="btn btn-success" id="show7" type="button">+ Add More</button></td>
 							
 							</tr>
@@ -819,7 +801,7 @@ $(document).ready(function(){
 							<div class="form-group">
 								<label>Total: &nbsp;</label>
 								<div class="input-group">
-									<input id="total" value="<?php echo $invoiceValues['order_total_after_tax']; ?>" type="number" class="form-control" name="totalAftertax" id="totalAftertax" placeholder="Total">
+									<input id="total"  type="number" class="form-control" name="totalAftertax" id="totalAftertax" placeholder="Total">
 								</div>
 							</div>
 							<br>
@@ -827,7 +809,7 @@ $(document).ready(function(){
 							<div class="form-group">
 								<label>Amount Paid: &nbsp;</label>
 								<div class="input-group">
-									<input value="<?php echo $invoiceValues['order_amount_paid']; ?>" type="number" class="form-control" name="amountPaid" id="amountPaid" placeholder="Amount Paid">
+									<input  type="number" class="form-control" name="amountPaid" id="amountPaid" placeholder="Amount Paid">
 								</div>
 							</div>
 							<br>
@@ -835,7 +817,7 @@ $(document).ready(function(){
 							<div class="form-group">
 								<label>Amount Due: &nbsp;</label>
 								<div class="input-group">
-									<input value="<?php echo $invoiceValues['order_total_amount_due']; ?>" type="number" class="form-control" name="amountDue" id="amountDue" placeholder="Amount Due">
+									<input  type="number" class="form-control" name="amountDue" id="amountDue" placeholder="Amount Due">
 								</div>
 							</div>
 							<br>
