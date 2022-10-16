@@ -571,7 +571,7 @@ $(document).ready(function(){
                                         
 
                                         //calculate final cost
-                                        var total2 = (quantity * price);
+                                        var total2 = (quantity2 * price2);
 
                                         console.log(total2);
                                         //print value to orderTotal
@@ -601,9 +601,9 @@ $(document).ready(function(){
                                         //calculate final cost
                                         var total3 = (quantity3 * price3);
 
-                                        console.log(total);
+                                        console.log(total3);
                                         //print value to orderTotal
-                                        $("#orderTotal").val(total3);
+                                        $("#orderTotal3").val(total3);
 }
                                 </script>
 								<td><input class="itemRow" type="checkbox"></td>
@@ -631,7 +631,7 @@ $(document).ready(function(){
 
                                         console.log(total4);
                                         //print value to orderTotal
-                                        $("#orderTotal").val(total4);
+                                        $("#orderTotal4").val(total4);
 }
                                 </script>
 								<td><input class="itemRow" type="checkbox"></td>
@@ -646,7 +646,7 @@ $(document).ready(function(){
 							
 								<tr id="p4"  style="display:none;">
                                 <script>
-                                    function calculatePrice()
+                                    function calculatePrice5()
 {
 
                                         var quantity5 = $("#quantity5").val();
@@ -673,7 +673,7 @@ $(document).ready(function(){
 							
 							<tr id="p5"  style="display:none;">
                             <script>
-                                    function calculatePrice()
+                                    function calculatePrice6()
 {
 
                                         var quantity6 = $("#quantity6").val();
@@ -700,7 +700,7 @@ $(document).ready(function(){
 							
 								<tr id="p6"  style="display:none;">
                                 <script>
-                                    function calculatePrice()
+                                    function calculatePrice7()
 {
 
                                         var quantity7 = $("#quantity7").val();
@@ -799,9 +799,33 @@ $(document).ready(function(){
 							
 													
 							<div class="form-group">
+              <script>
+                function totalcalculatePrice()
+{
+
+                  var orderTotal = $("#orderTotal").val();
+                  var orderTotal2 =  $("#orderTotal2").val();
+                  var orderTotal3 = $("#orderTotal3").val();
+                  var orderTotal4 =  $("#orderTotal4").val();
+                  var orderTotal5 = $("#orderTotal5").val();
+                  var orderTotal6 =  $("#orderTotal6").val();
+                  var orderTotal7 =  $("#orderTotal7").val();
+                  var orderTotal8 = $("#orderTotal8").val();
+                  var orderTotal9 =  $("#orderTotal9").val();
+                                        
+
+                  //calculate final cost
+                  var totalsum = (orderTotal + orderTotal2 + orderTotal3 + orderTotal4 + orderTotal5 + orderTotal6 + orderTotal7 + orderTotal8 + orderTotal9);
+
+                  console.log(totalsum);
+                  //print value to orderTotal
+                  $("#totals").val(totalsum);
+}
+                </script>
 								<label>Total: &nbsp;</label>
 								<div class="input-group">
-									<input id="total"  type="number" class="form-control" name="totalAftertax" id="totalAftertax" placeholder="Total">
+									<input  type="number" class="form-control" name="total" id="totals" placeholder="Total">
+                  <button class="btn btn-primary" onclick="totalcalculatePrice()" type="button">Update</button>
 								</div>
 							</div>
 							<br>
@@ -809,15 +833,33 @@ $(document).ready(function(){
 							<div class="form-group">
 								<label>Amount Paid: &nbsp;</label>
 								<div class="input-group">
-									<input  type="number" class="form-control" name="amountPaid" id="amountPaid" placeholder="Amount Paid">
+									<input type="number" class="form-control" name="amountPaid" id="amountPaid" placeholder="Amount Paid">
 								</div>
 							</div>
 							<br>
 							<br>
 							<div class="form-group">
+              <script>
+                function duecalculatePrice()
+{
+                  var total =  $("#total").val();
+
+                  var amountPaid =  $("#amountPaid").val();
+
+                  //calculate final cost
+                  var totalsum = (total - amountPaid);
+
+                  console.log(totalsum);
+                  //print value to orderTotal
+                  $("#amountDue").val(totalsum);
+}
+              </script>
+
 								<label>Amount Due: &nbsp;</label>
 								<div class="input-group">
-									<input  type="number" class="form-control" name="amountDue" id="amountDue" placeholder="Amount Due">
+									<input  type="number" class="form-control" name="amountDue" id="amountDue" readonly placeholder="Amount Due">
+                  <button class="btn btn-primary" onclick="duecalculatePrice()" type="button">Update</button>
+
 								</div>
 							</div>
 							<br>
