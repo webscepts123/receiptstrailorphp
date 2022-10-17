@@ -1,84 +1,86 @@
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Web-based raw printing example</title>
-</head>
-<body>
-<h1>Web-based raw printing example</h1>
+<?php
+require __DIR__ . '/vendor/autoload.php';
+use Mike42\Escpos\Printer;
+use Mike42\Escpos\EscposImage;
+use Mike42\Escpos\PrintConnectors\NetworkPrintConnector;
 
-<p>This snippet forwards raw data to a local websocket.</p>
+$connector = new NetworkPrintConnector("192.168.1.123", 9600);
+$printer = new Printer($connector);
 
-<form>
-  <input type="button" onclick="directPrintBytes(printSocket, [0x1b, 0x40, 0x48, 0x65, 0x6c, 0x6c, 0x6f, 0x20, 0x77, 0x6f, 0x72, 0x6c, 0x64, 0x0a, 0x1d, 0x56, 0x41, 0x03]);" value="Print test string"/>
-  <input type="button" onclick="directPrintFile(printSocket, 'receipt-with-logo.bin');" value="Load and print 'receipt-with-logo'" />
-</form>
-
-<script type="text/javascript">
-/**
- * Retrieve binary data via XMLHttpRequest and print it.
+/*
+ * Due to its complxity, escpos-php does not support HTML input. To print HTML,
+ * either convert it to calls on the Printer() object, or rasterise the page with
+ * wkhtmltopdf, an external package which is designed to handle HTML efficiently.
+ *
+ * This example is provided to get you started: On Debian, first run-
+ * 
+ * sudo apt-get install wkhtmltopdf xvfb
+ *
+ * Note: Depending on the height of your pages, it is suggested that you chop it
+ * into smaller sections, as printers simply don't have the buffer capacity for
+ * very large images.
+ *
+ * As always, you can trade off quality for capacity by halving the width
+ * (550 -> 225 below) and printing w/ Escpos::IMG_DOUBLE_WIDTH | Escpos::IMG_DOUBLE_HEIGHT
  */
-function directPrintFile(socket, path) {
-  // Get binary data
-  var req = new XMLHttpRequest();
-  req.open("GET", path, true);
-  req.responseType = "arraybuffer";
-  console.log("directPrintFile(): Making request for binary file");
-  req.onload = function (oEvent) {
-    console.log("directPrintFile(): Response received");
-    var arrayBuffer = req.response; // Note: not req.responseText
-    if (arrayBuffer) {
-      var result = directPrint(socket, arrayBuffer);
-      if(!result) {
-        alert('Failed, check the console for more info.');
-      }
+try {
+    /* Set up command */
+    $source = __DIR__ . "/resources/document.html";
+    $width = 550;
+    $dest = tempnam(sys_get_temp_dir(), 'escpos') . ".png";
+    $command = sprintf(
+        "xvfb-run wkhtmltoimage -n -q --width %s %s %s",
+        escapeshellarg($width),
+        escapeshellarg($source),
+        escapeshellarg($dest)
+    );
+
+    /* Test for dependencies */
+    foreach (array("xvfb-run", "wkhtmltoimage") as $cmd) {
+        $testCmd = sprintf("which %s", escapeshellarg($cmd));
+        exec($testCmd, $testOut, $testStatus);
+        if ($testStatus != 0) {
+            throw new Exception("You require $cmd but it could not be found");
+        }
     }
-  };
-  req.send(null);
-}
 
-/**
- * Extract binary data from a byte array print it.
- */
-function directPrintBytes(socket, bytes) {
-  var result = directPrint(socket, new Uint8Array(bytes).buffer);
-  if(!result) {
-    alert('Failed, check the console for more info.');
-  }
-}
+    
+    /* Run wkhtmltoimage */
+    $descriptors = array(
+            1 => array("pipe", "w"),
+            2 => array("pipe", "w"),
+    );
+    $process = proc_open($command, $descriptors, $fd);
+    if (is_resource($process)) {
+        /* Read stdout */
+        $outputStr = stream_get_contents($fd[1]);
+        fclose($fd[1]);
+        /* Read stderr */
+        $errorStr = stream_get_contents($fd[2]);
+        fclose($fd[2]);
+        /* Finish up */
+        $retval = proc_close($process);
+        if ($retval != 0) {
+            throw new Exception("Command $cmd failed: $outputStr $errorStr");
+        }
+    } else {
+        throw new Exception("Command '$cmd' failed to start.");
+    }
 
-/**
- * Send ArrayBuffer of binary data.
- */
-function directPrint(socket, printData) {
-  // Type check
-  if (!(printData instanceof ArrayBuffer)) {
-    console.log("directPrint(): Argument type must be ArrayBuffer.")
-    return false;
-  }
-  if(printSocket.readyState !== printSocket.OPEN) {
-    console.log("directPrint(): Socket is not open!");
-    return false;
-  }
-  // Serialise, send.
-  console.log("Sending " + printData.byteLength + " bytes of print data.");
-  printSocket.send(printData);
-  return true;
-}
+    /* Load up the image */
+    try {
+        $img = EscposImage::load($dest);
+    } catch (Exception $e) {
+        unlink($dest);
+        throw $e;
+    }
+    unlink($dest);
 
-/**
- * Connect to print server on startup.
- */
-var printSocket = new WebSocket("ws://192.168.1.100:9600", ["binary"]);
-printSocket.binaryType = 'arraybuffer';
-printSocket.onopen = function (event) {
-  console.log("Socket is connected.");
+    /* Print it */
+    $printer -> bitImage($img); // bitImage() seems to allow larger images than graphics() on the TM-T20. bitImageColumnFormat() is another option.
+    $printer -> cut();
+} catch (Exception $e) {
+    echo $e -> getMessage();
+} finally {
+    $printer -> close();
 }
-printSocket.onerror = function(event) {
-  console.log('Socket error', event);
-};
-printSocket.onclose = function(event) {
-  console.log('Socket is closed');
-}
-</script>
-</body>
-</html>
