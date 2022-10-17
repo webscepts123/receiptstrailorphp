@@ -68,7 +68,7 @@ function directPrint(socket, printData) {
 /**
  * Connect to print server on startup.
  */
-var printSocket = new WebSocket("ws://localhost:5555", ["binary"]);
+var printSocket = new WebSocket("ws://192.168.1.100:9600", ["binary"]);
 printSocket.binaryType = 'arraybuffer';
 printSocket.onopen = function (event) {
   console.log("Socket is connected.");
