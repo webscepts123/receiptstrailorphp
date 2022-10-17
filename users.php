@@ -54,7 +54,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM rentuser ORDER BY id DESC");
 		echo "<td>".$res['username']."</td>";
 		echo "<td>".$res['email']."</td>";	
 		echo "<td>".$res['role']."</td>";	
-    echo "  <td><a class='btn btn-primary' href=\"updateuser.php?id=$res[id]\">Edit</a>  </td> ";
+    echo "  <td><a class='btn btn-primary' href=\"updateuser.php?id=$res[id]\">Edit</a> <a class='btn btn-primary' href=\"userqr.php?id=$res[id]\">Qr Code</a> </td> ";
 	
 	
 	}

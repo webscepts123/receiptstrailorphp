@@ -843,10 +843,13 @@ $(document).ready(function(){
                   var orderTotal7 =  $("#orderTotal7").val();
                   var orderTotal8 = $("#orderTotal8").val();
                   var orderTotal9 =  $("#orderTotal9").val();
+
+
+                  
                                         
 
                   //calculate final cost
-                  var totalsum = (orderTotal + orderTotal2 + orderTotal3 + orderTotal4 + orderTotal5 + orderTotal6 + orderTotal7 + orderTotal8 + orderTotal9);
+                  var totalsum = (orderTotal  += orderTotal2 +=	 orderTotal3 += orderTotal4 += orderTotal5 +=	 orderTotal6 +=	 orderTotal7 +=	 orderTotal8  +=	 orderTotal9);
 
                   console.log(totalsum);
                   //print value to orderTotal
@@ -873,22 +876,22 @@ $(document).ready(function(){
               <script>
                 function duecalculatePrice()
 {
-                  var total =  $("#total").val();
+                  var total =  $("#totals").val();
 
                   var amountPaid =  $("#amountPaid").val();
 
                   //calculate final cost
-                  var totalsum = (total - amountPaid);
+                  var duetotalsum = (total - amountPaid);
 
-                  console.log(totalsum);
+                  console.log(duetotalsum);
                   //print value to orderTotal
-                  $("#amountDue").val(totalsum);
+                  $("#amountDues").val(duetotalsum);
 }
               </script>
 
 								<label>Amount Due: &nbsp;</label>
 								<div class="input-group">
-									<input  type="number" class="form-control" name="amountDue" id="amountDue" readonly placeholder="Amount Due">
+									<input  type="number" class="form-control" name="amountDue" id="amountDues" readonly placeholder="Amount Due">
                   <button class="btn btn-primary" onclick="duecalculatePrice()" type="button">Update</button>
 
 								</div>
