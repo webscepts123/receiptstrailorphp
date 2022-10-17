@@ -8,6 +8,22 @@ include_once("connection.php");
 $result = mysqli_query($mysqli, "SELECT * FROM rentcustomer ORDER BY id DESC");
 ?>
 
+
+<?php
+//including the database connection file
+include_once("connection.php");
+
+//fetching data in descending order (lastest entry first)
+$sql = "SELECT * FROM coats WHERE code='" . $_GET["code"] . "'";
+
+$result=mysqli_query($mysqli,$sql);
+$singleRow = mysqli_fetch_assoc($result);
+
+
+
+
+?>
+
 <style>
   .result
   {
@@ -531,29 +547,44 @@ $(document).ready(function(){
 							</tr>
 						
 							<tr>
-                                <script>
-                                    function calculatePrice1()
-{
+                  <script>
+                    function calculatePrice1()
+                      {
 
-                                        var quantity = $("#quantity").val();
-                                        var price =  $("#price").val();
+                        var quantity = $("#quantity").val();
+                        var price =  $("#price").val();
                                         
 
-                                        //calculate final cost
-                                        var total = (quantity * price);
+                        //calculate final cost
+                        var total = (quantity * price);
 
-                                        console.log(total);
-                                        //print value to orderTotal
-                                        $("#orderTotal").val(total);
-}
-                                </script>
+                        console.log(total);
+                        //print value to orderTotal
+                        $("#orderTotal").val(total);
+                      }
+                  </script>
                        
 								<td><input class="itemRow" type="checkbox"></td>
 								<td><input type="text"  name="productcode"  class="form-control" autocomplete="off"></td>
-								<td><input type="text" class="form-control" name="productname"  autocomplete="off"></td>			
+								<td>
+                  <script>
+                    function totalproduct()
+                    {
+                        console.log(total12);
+
+
+                    }
+                      
+                    </script>
+                  <input type="search"   value="<?php if(isset($_GET['code'])){ echo $_GET['code']; } ?>" class="form-control" name="productname"  id="productn" autocomplete="off">
+                  <br>
+                  <button class="btn btn-primary" onclick="totalproduct()"  type="button">Update</button>
+                  <br>
+                  <br>
+                  <input type="text"  id="total12" class="form-control"   value="<?php echo $singleRow['productname']; ?>">
+                </td>			
 								<td><input type="number"  name="quantity" id="quantity"  class="form-control quantity" autocomplete="off"  value="1"></td>
 								<td><input type="number"  name="price" id="price" class="form-control price" autocomplete="off" ></td>
-                               
 								<td><input type="number"  name="total"  class="form-control total" id="orderTotal" autocomplete="off" readonly ></td>
                                  
 									<td><button class="btn btn-primary" onclick="calculatePrice1()" type="button">Update</button><button class="btn btn-danger delete"  type="button" id="hide">- Delete</button><button class="btn btn-success" id="show" type="button">+ Add More</button></td>
@@ -580,7 +611,7 @@ $(document).ready(function(){
                                 </script>
 								<td><input class="itemRow" type="checkbox"></td>
 								<td><input type="text"  name="productcode2"  class="form-control" autocomplete="off"></td>
-								<td><input type="text" class="form-control" name="productname2"  autocomplete="off"></td>			
+								<td><input type="search" value="<?php if(isset($_GET['code'])){ echo $_GET['code']; } ?>" class="form-control" name="productname2"  autocomplete="off"></td>			
 								<td><input type="number"  name="quantity2"  id="quantity2"  class="form-control quantity" autocomplete="off" value="1"></td>
 								<td><input type="number"  name="price2"  id="price2" class="form-control price" autocomplete="off"></td>
 								<td><input type="number"  name="total2"   id="orderTotal2" class="form-control total" readonly autocomplete="off"></td>
@@ -608,7 +639,7 @@ $(document).ready(function(){
                                 </script>
 								<td><input class="itemRow" type="checkbox"></td>
 								<td><input type="text"  name="productcode3"  class="form-control" autocomplete="off"></td>
-								<td><input type="text" class="form-control" name="productname3"  autocomplete="off"></td>			
+								<td><input type="search" value="<?php if(isset($_GET['code'])){ echo $_GET['code']; } ?>" class="form-control" name="productname3"  autocomplete="off"></td>			
 								<td><input type="number"  name="quantity3"  id="quantity3" class="form-control quantity" autocomplete="off"  value="1"></td>
 								<td><input type="number"  name="price3" id="price3"   class="form-control price" autocomplete="off"></td>
 								<td><input type="number"  name="total3" id="orderTotal3" readonly  class="form-control total" autocomplete="off"></td>
@@ -636,7 +667,7 @@ $(document).ready(function(){
                                 </script>
 								<td><input class="itemRow" type="checkbox"></td>
 								<td><input type="text"  name="productcode4"  class="form-control" autocomplete="off"></td>
-								<td><input type="text" class="form-control" name="productname4"  autocomplete="off"></td>			
+								<td><input type="search" value="<?php if(isset($_GET['code'])){ echo $_GET['code']; } ?>" class="form-control" name="productname4"  autocomplete="off"></td>			
 								<td><input type="number"  name="quantity4" id="quantity4"   class="form-control quantity" autocomplete="off"  value="1"></td>
 								<td><input type="number"  name="price4" id="price4"   class="form-control price" autocomplete="off"></td>
 								<td><input type="number"  name="total4" id="orderTotal4" readonly class="form-control total" autocomplete="off"></td>
@@ -663,7 +694,7 @@ $(document).ready(function(){
                                 </script>
 								<td><input class="itemRow" type="checkbox"></td>
 								<td><input type="text"  name="productcode5"  class="form-control" autocomplete="off"></td>
-								<td><input type="text" class="form-control" name="productname5"  autocomplete="off"></td>			
+								<td><input type="search" value="<?php if(isset($_GET['code'])){ echo $_GET['code']; } ?>" class="form-control" name="productname5"  autocomplete="off"></td>			
 								<td><input type="number"  name="quantity5" id="quantity5" class="form-control quantity" autocomplete="off"  value="1"></td>
 								<td><input type="number"  name="price5" id="price5"  class="form-control price" autocomplete="off"></td>
 								<td><input type="number"  name="total5" id="orderTotal5" class="form-control total" autocomplete="off"></td>
@@ -690,7 +721,7 @@ $(document).ready(function(){
                                 </script>
 								<td><input class="itemRow" type="checkbox"></td>
 								<td><input type="text"  name="productcode6"  class="form-control" autocomplete="off"></td>
-								<td><input type="text" class="form-control" name="productname6"  autocomplete="off"></td>			
+								<td><input type="search" value="<?php if(isset($_GET['code'])){ echo $_GET['code']; } ?>" class="form-control" name="productname6"  autocomplete="off"></td>			
 								<td><input type="number"  name="quantity6" id="quantity6"  class="form-control quantity" autocomplete="off"  value="1"></td>
 								<td><input type="number"  name="price6" id="price6"  class="form-control price" autocomplete="off"></td>
 								<td><input type="number"  name="total6" id="orderTotal6"  class="form-control  total"  readonly autocomplete="off"></td>
@@ -717,7 +748,7 @@ $(document).ready(function(){
                                 </script>
 								<td><input class="itemRow" type="checkbox"></td>
 								<td><input type="text"  name="productcode7"  class="form-control" autocomplete="off"></td>
-								<td><input type="text" class="form-control" name="productname7"  autocomplete="off"></td>			
+								<td><input type="search" value="<?php if(isset($_GET['code'])){ echo $_GET['code']; } ?>" class="form-control" name="productname7"  autocomplete="off"></td>			
 								<td><input type="number"  name="quantity7" id="quantity7" class="form-control quantity" autocomplete="off"  value="1"></td>
 								<td><input type="number"  name="price7"  id="price7"  class="form-control price" autocomplete="off"></td>
 								<td><input type="number"  name="total7" id="orderTotal7"   class="form-control total" readonly autocomplete="off"></td>
@@ -744,7 +775,7 @@ $(document).ready(function(){
                                 </script>
 								<td><input class="itemRow" type="checkbox"></td>
 								<td><input type="text"  name="productcode8"  class="form-control" autocomplete="off"></td>
-								<td><input type="text" class="form-control" name="productname8"  autocomplete="off"></td>			
+								<td><input type="search" value="<?php if(isset($_GET['code'])){ echo $_GET['code']; } ?>" class="form-control" name="productname8"  autocomplete="off"></td>			
 								<td><input type="number"  name="quantity8" id="quantity8" class="form-control quantity" autocomplete="off"  value="1"></td>
 								<td><input type="number"  name="price8" id="price8"   class="form-control price" autocomplete="off"></td>
 								<td><input type="number"  name="total8" id="orderTotal8" readonly  class="form-control total" autocomplete="off"></td>
@@ -770,7 +801,7 @@ $(document).ready(function(){
                                 </script>
 								<td><input class="itemRow" type="checkbox"></td>
 								<td><input type="text"  name="productcode9"  class="form-control" autocomplete="off"></td>
-								<td><input type="text" class="form-control" name="productname9"  autocomplete="off"></td>			
+								<td><input type="search" value="<?php if(isset($_GET['code'])){ echo $_GET['code']; } ?>" class="form-control" name="productname9"  autocomplete="off"></td>			
 								<td><input type="number"  name="quantity9" id="quantity9" class="form-control quantity" autocomplete="off"  value="1"></td>
 								<td><input type="number"  name="price9" id="price9"   class="form-control price" autocomplete="off"></td>
 								<td><input type="number"  name="total9" id="orderTotal9"  class="form-control total" readonly autocomplete="off"></td>
