@@ -1,7 +1,8 @@
 <?php
   include_once("connection.php"); 
+
   
-  include 'include/phpqrcode/qrlib.php';
+  include 'phpqrcode/qrlib.php';
 
   
   
