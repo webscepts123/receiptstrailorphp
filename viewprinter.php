@@ -10,14 +10,6 @@ $result = mysqli_query($mysqli, "SELECT * FROM printer ORDER BY id DESC");
 ?>
 
 
-
-
-
-
-
-
-
-
 <br>
 <div class="card">
               <div class="card-header">
@@ -29,7 +21,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM printer ORDER BY id DESC");
                 <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
                   <div class="row">
                   <div class="col-sm-12 col-md-6"><div class="dt-buttons btn-group flex-wrap">     
-                <button onclick="window.location.href='addorderr.php';" class="btn btn-success">Add Printer</button>
+                <button onclick="window.location.href='terminalconfig.php';" class="btn btn-success">Add Printer</button>
          
                    <button class="btn btn-secondary buttons-copy buttons-html5" tabindex="0" aria-controls="example1" type="button">
                   <span>All</span></button> 
@@ -72,14 +64,13 @@ $result = mysqli_query($mysqli, "SELECT * FROM printer ORDER BY id DESC");
                       echo "<td>".$res['cprofile']."</td>";
                       echo "<td>".$res['charactername']."</td>";
                       echo "<td>".$res['path']."</td>";
-                      echo "<td><a class='btn btn-primary' href=\"actions.php?id=$res[id]\">Edit</a>  </td>";
+                      echo "<td><a class='btn btn-primary' href=\"editterminalconfig.php?id=$res[id]\">Edit</a>  </td>";
 	
 	
 	                } 
                 ?>
                 </tbody>
                   <tfoot>
-                  <tr><th rowspan="1" colspan="1">Rendering engine</th><th rowspan="1" colspan="1">Browser</th><th rowspan="1" colspan="1">Platform(s)</th><th rowspan="1" colspan="1">Engine version</th><th rowspan="1" colspan="1">CSS grade</th></tr>
                   </tfoot>
                 </table></div></div><div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="example1_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="example1_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="example1_previous"><a href="#" aria-controls="example1" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="example1" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="2" tabindex="0" class="page-link">2</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="3" tabindex="0" class="page-link">3</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="4" tabindex="0" class="page-link">4</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="5" tabindex="0" class="page-link">5</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="6" tabindex="0" class="page-link">6</a></li><li class="paginate_button page-item next" id="example1_next"><a href="#" aria-controls="example1" data-dt-idx="7" tabindex="0" class="page-link">Next</a></li></ul></div></div></div></div>
               </div>
