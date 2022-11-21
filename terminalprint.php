@@ -25,7 +25,7 @@ $printer = new Printer($connector);
 $printer -> initialize();
 
 /* Text */
-$printer -> text("Hello world\n");
+$printer -> text("Hello worlds\n");
 $printer -> cut();
 
 
