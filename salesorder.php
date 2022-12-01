@@ -334,7 +334,7 @@ $(document).ready(function(){
 
              <div id="per1" class="container" style="display:none;">
                   <br>
-                  <a id="hide11"  class="btn btn-app bg-secondary">
+                  <a   class="btn btn-app bg-secondary">
                     Hide
                   </a>
                   <br>

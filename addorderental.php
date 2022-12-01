@@ -5,6 +5,7 @@
     $idnumber = $_POST['idnumber'];  
     $customername = $_POST['customername'];
     $date = $_POST['date'];
+    $receivedate = $_POST['receivedate'];
     $duedate = $_POST['duedate'];
     $productcode =$_POST ['productcode'];
     $productname =$_POST ['productname'];
@@ -67,7 +68,7 @@
     
     
 
-    $result = "INSERT INTO rentorders (idnumber,customername,date,duedate,productcode,productname,quantity,price,total,productcode2,productname2,quantity2,price2,total2,productcode3,productname3,quantity3,price3,total3,productcode4,productname4,quantity4,price4,total4,productcode5,productname5,quantity5,price5,total5,productcode6,productname6,quantity6,price6,total6,productcode7,productname7,quantity7,price7,total7,productcode8,productname8,quantity8,price8,total8,productcode9,productname9,quantity9,price9,total9,notes,subTotal,taxRate,taxAmount,totalAftertax,amountPaid,amountDue,status) VALUES ('$idnumber', '$customername','$date','$duedate','$productcode','$productname','$quantity','$price','$total','$productcode2','$productname2','$quantity2','$price2','$total2','$productcode3','$productname3','$quantity3','$price3','$total3','$productcode4','$productname4','$quantity4','$price4','$total4','$productcode5','$productname5','$quantity5','$price5','$total5','$productcode6','$productname6','$quantity6','$price6','$total6','$productcode7','$productname7','$quantity7','$price7','$total7','$productcode8','$productname8','$quantity8','$price8','$total8','$productcode9','$productname9','$quantity9','$price9','$total9', '$notes', '$subTotal', '$taxRate', '$taxAmount', '$totalAftertax', '$amountPaid', '$amountDue', '$status')";
+    $result = "INSERT INTO rentorders (idnumber,customername,date,receivedate,duedate,productcode,productname,quantity,price,total,productcode2,productname2,quantity2,price2,total2,productcode3,productname3,quantity3,price3,total3,productcode4,productname4,quantity4,price4,total4,productcode5,productname5,quantity5,price5,total5,productcode6,productname6,quantity6,price6,total6,productcode7,productname7,quantity7,price7,total7,productcode8,productname8,quantity8,price8,total8,productcode9,productname9,quantity9,price9,total9,notes,subTotal,taxRate,taxAmount,totalAftertax,amountPaid,amountDue,status) VALUES ('$idnumber', '$customername','$date','$receivedate','$duedate','$productcode','$productname','$quantity','$price','$total','$productcode2','$productname2','$quantity2','$price2','$total2','$productcode3','$productname3','$quantity3','$price3','$total3','$productcode4','$productname4','$quantity4','$price4','$total4','$productcode5','$productname5','$quantity5','$price5','$total5','$productcode6','$productname6','$quantity6','$price6','$total6','$productcode7','$productname7','$quantity7','$price7','$total7','$productcode8','$productname8','$quantity8','$price8','$total8','$productcode9','$productname9','$quantity9','$price9','$total9', '$notes', '$subTotal', '$taxRate', '$taxAmount', '$totalAftertax', '$amountPaid', '$amountDue', '$status')";
 
     if(!mysqli_query($mysqli, $result)) {
         die('Error: ' . mysqli_error($mysqli));

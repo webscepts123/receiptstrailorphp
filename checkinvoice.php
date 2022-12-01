@@ -73,7 +73,7 @@ $singleRow = mysqli_fetch_assoc($result);
 		 <td>$res['status']</td>
 	   <td>$res['total_amt']</td>
 		
-        <td><a class='btn btn-primary' href=\"completeorder.php?id=$res[id]\">Complete Order</a>  </td>	
+     <td><a class='btn btn-primary' href=\"completeorder.php?id=$res[id]\">Complete Order</a>  </td>	
 
 
 	

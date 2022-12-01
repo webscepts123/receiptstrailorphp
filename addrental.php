@@ -200,6 +200,10 @@ $(document).ready(function(){
                     </div>
                     <div class="col">
                         <div class="form-group">
+                          <label>Receive Date</label>
+                          <input type="date" name="receivedate" class="form-control" placeholder="Name">
+                        </div>
+                        <div class="form-group">
                           <label>Due Date</label>
                           <input type="date" name="duedate" class="form-control" placeholder="Name">
                         </div>
