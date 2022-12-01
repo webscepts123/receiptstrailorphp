@@ -18,7 +18,24 @@ $result = mysqli_query($mysqli, "SELECT * FROM coats ORDER BY id DESC");
         </div>
     <?php } ?>
 
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 
+<link href="https://nightly.datatables.net/css/jquery.dataTables.css" rel="stylesheet" type="text/css" />
+<script src="https://nightly.datatables.net/js/jquery.dataTables.js"></script>
+<script>
+  $(document).ready( function () {
+  var table = $('#example').DataTable();
+  
+      $('.dataTables_filter input')
+       .off()
+       .on('keyup', function() {
+          $('#example1').DataTable().column(0).search(this.value.trim(), false, false).draw();
+       });    
+
+  
+
+} );
+  </script>
   <div class="card">
               <div class="card-header">
                 <h3 class="card-title">View Product</h3>
@@ -27,6 +44,9 @@ $result = mysqli_query($mysqli, "SELECT * FROM coats ORDER BY id DESC");
               <div class="card-body">
                 <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4"><div class="row"><div class="col-sm-12 col-md-6"><div class="dt-buttons btn-group flex-wrap">
                 <button onclick="window.location.href='rentproduct.php';" class="btn btn-primary">Add Product</button>
+                  <button class="btn btn-secondary buttons-csv buttons-html5" tabindex="0" aria-controls="example1" type="button"><span>Processing</span></button>
+                   <button class="btn btn-secondary buttons-excel buttons-html5" tabindex="0" aria-controls="example1" type="button"><span>Completed</span></button>
+                    <button class="btn btn-secondary buttons-pdf buttons-html5" tabindex="0" aria-controls="example1" type="button"><span>To Recieve</span></button>
 
                 
                   
@@ -34,18 +54,19 @@ $result = mysqli_query($mysqli, "SELECT * FROM coats ORDER BY id DESC");
                   </div>
                   <div class="col-sm-12 col-md-6">
                     <div id="example1_filter" class="dataTables_filter">
-                      <label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="example1"></label>
+                      <label>Search:<input type="search" class="" placeholder="" aria-controls="example"></label>
                     </div>
                   </div>
                 </div>
                 <div class="row"><div class="col-sm-12">
-                  <table id="example1" class="table table-bordered table-striped dataTable dtr-inline" aria-describedby="example1_info">
+                  <table id="example1" class="table table-bordered table-striped dataTable dtr-inline display nowrap" aria-describedby="example1_info">
                   <thead>
                   <tr>
                     <th class="sorting sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">ID</th>
                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">ID No</th>
                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Product</th>
-                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">SKU</th>
+                    `<th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">SKU</th>`
+                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">Status</th>
                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Category</th>
                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Sub Category</th>
                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Price</th>
@@ -68,14 +89,17 @@ $result = mysqli_query($mysqli, "SELECT * FROM coats ORDER BY id DESC");
     
 	                  while($res = mysqli_fetch_array($result)) {		
 		                echo "<tr class='odd'>";
+                        echo   "<input type='checkbox' class='custom-control-input'>";
+
 		                    echo "<td>".$res['id']."</td>";
 		                    echo "<td>".$res['idno']."</td>";
 		                    echo "<td>".$res['productname']."</td>";	
 		                    echo "<td>".$res['code']."</td>";	
+                        echo "<td>".$res['status']."</td>";	
                         echo "<td>".$res['category']."</td>";
                         echo "<td>".$res['subcategory']."</td>";
                         echo "<td>".$res['price']."</td>";
-                        echo "<td><a class='btn btn-primary' href=\"rentedit.php?id=$res[id]\">Edit</a><a class='btn btn-danger' href=\"productdel.php?del=$res[id]\">Delete</a> <a class='btn btn-primary' href=\"qrcode.php?id=$res[id]\">View QR</a> </td>";	
+                        echo "<td><a class='btn btn-primary' href=\"rentedit.php?id=$res[id]\">Edit</a><a class='btn btn-danger' href=\"productdel.php?del=$res[id]\">Delete</a> <a class='btn btn-primary' href=\"qrcode.php?id=$res[id]\">View QR</a><a class='btn btn-primary' href=\"pstatus.php?id=$res[id]\">Status</a> </td>";	
 
 
 
