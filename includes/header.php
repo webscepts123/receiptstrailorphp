@@ -261,7 +261,13 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
               </li>
             
 
-              <li class="nav-item menu-open">
+          
+            </ul>
+            
+          
+          </li>
+
+          <li class="nav-item menu-open">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
@@ -283,11 +289,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                   <p>View Printer</p>
                 </a>
               </li>
-            
-            
             </ul>
-          
-          </li>
+         </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
@@ -321,8 +324,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                   <p>Check Invoice</p>
                 </a>
               </li>
-            
-            </ul>
+              </ul>
+
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
@@ -345,9 +348,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                   <p>View User</p>
                 </a>
               </li>
-             
+              </ul>
 
-            </ul>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
@@ -365,7 +367,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                 </a>
               </li>
            
-            </ul>
           </li>
         
         

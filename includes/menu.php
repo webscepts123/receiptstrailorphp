@@ -85,36 +85,7 @@ nav.open .sidebar {
       </a>
       </li>
        
-      <!--<li>-->
-      <!--  <a href="index.php" class="nav-link text-white">-->
-      <!--    <svg class="bi me-2" width="16" height="16"><use xlink:href="index.php"></use></svg>-->
-      <!--    Order-->
-      <!--  </a>-->
-      <!--</li>-->
-      <!--<li>-->
-      <!--  <a href="customer.php" class="nav-link text-white">-->
-      <!--    <svg class="bi me-2" width="16" height="16"><use xlink:href="customer.php"></use></svg>-->
-      <!--    Customers-->
-      <!--  </a>-->
-      <!--</li>-->
-      <!--<li>-->
-      <!--  <a href="vieworder.php" class="nav-link text-white">-->
-      <!--    <svg class="bi me-2" width="16" height="16"><use xlink:href="vieworder.php"></use></svg>-->
-      <!--     View Order-->
-      <!--  </a>-->
-      <!--</li>-->
-      <!--<li>-->
-      <!--  <a href="dueorder.php" class="nav-link text-white">-->
-      <!--    <svg class="bi me-2" width="16" height="16"><use xlink:href="dueorder.php"></use></svg>-->
-      <!--    Due Order-->
-      <!--  </a>-->
-      <!--</li>-->
-      <!--<li>-->
-      <!--  <a href="viewoutstand.php" class="nav-link text-white">-->
-      <!--    <svg class="" width="16" height="16"><use xlink:href=""></use></svg>-->
-      <!--     View Outstanding-->
-      <!--  </a>-->
-      <!--</li>-->
+  
    
        <li>
         <a href="rentcoats.php" class="nav-link text-white">

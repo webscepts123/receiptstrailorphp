@@ -11,7 +11,23 @@ $result = mysqli_query($mysqli, "SELECT * FROM rentorders ORDER BY id DESC");
 
 
 
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<link href="https://nightly.datatables.net/css/jquery.dataTables.css" rel="stylesheet" type="text/css" />
+<script src="https://nightly.datatables.net/js/jquery.dataTables.js"></script>
+<script>
+  $(document).ready( function () {
+  var table = $('#example').DataTable();
+  
+      $('.dataTables_filter input')
+       .off()
+       .on('keyup', function() {
+          $('#example1').DataTable().column(0).search(this.value.trim(), false, false).draw();
+       });    
 
+  
+
+} );
+</script>
 
 
 
@@ -30,22 +46,20 @@ $result = mysqli_query($mysqli, "SELECT * FROM rentorders ORDER BY id DESC");
                   <div class="col-sm-12 col-md-6"><div class="dt-buttons btn-group flex-wrap">     
                 <button onclick="window.location.href='addorderr.php';" class="btn btn-success">Add Order</button>
          
-                   <button class="btn btn-secondary buttons-copy buttons-html5" tabindex="0" aria-controls="example1" type="button">
-                  <span>All</span></button> 
-                  <button class="btn btn-secondary buttons-csv buttons-html5" tabindex="0" aria-controls="example1" type="button"><span>Processing</span></button>
-                   <button class="btn btn-secondary buttons-excel buttons-html5" tabindex="0" aria-controls="example1" type="button"><span>Completed</span></button>
-                    <button class="btn btn-secondary buttons-pdf buttons-html5" tabindex="0" aria-controls="example1" type="button"><span>To Recieve</span></button>
-                     <button class="btn btn-secondary buttons-print" tabindex="0" aria-controls="example1" type="button"><span>Print</span></button> <div class="btn-group">
-                      <button class="btn btn-secondary buttons-collection dropdown-toggle buttons-colvis" tabindex="0" aria-controls="example1" type="button" aria-haspopup="true"><span>Column visibility</span><span class="dt-down-arrow"></span></button>
+                
                     </div>
                    </div>
                   </div>
                   <div class="col-sm-12 col-md-6">
+                  <div class="col-sm-12 col-md-6">
                     <div id="example1_filter" class="dataTables_filter">
-                      <label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="example1"></label>
+                      <label>Search:<input type="search" class="" placeholder="" aria-controls="example"></label>
                     </div>
                   </div>
+                  </div>
                 </div>
+                <br>
+                <br>
                 <div class="row">
                   <div class="col-sm-12">
                     <table id="example1" class="table table-bordered table-striped dataTable dtr-inline" aria-describedby="example1_info">
@@ -72,7 +86,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM rentorders ORDER BY id DESC");
                       echo "<td>".$res['advanceamt']."</td>";
                       echo "<td>".$res['status']."</td>";
                       echo "<td>".$res['paymethod']."</td>";
-                      echo "  <td><a class='btn btn-primary' href=\"rentinvoice.php?id=$res[id]\">View Invoice</a>  </td><td><a class='btn btn-primary' href=\"terminalprint.php?id=$res[id]\">View termal Invoice</a>  </td><td><a class='btn btn-primary' href=\"actions.php?id=$res[id]\">View Action</a>  </td><td><a class='btn btn-primary' href=\"paymethod.php?id=$res[id]\">Payment Method</a>  </td> ";
+                      echo "  <td><a class='btn btn-primary' href=\"rentinvoice.php?id=$res[id]\">View Invoice</a>  </td><td><a class='btn btn-primary' href=\"terminalprints.php?id=$res[id]\">View termal Invoice</a>  </td><td><a class='btn btn-primary' href=\"actions.php?id=$res[id]\">View Action</a>  </td><td><a class='btn btn-primary' href=\"paymethod.php?id=$res[id]\">Payment Method</a>  </td> ";
 	
 	
 	                } 
