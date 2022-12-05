@@ -6,11 +6,11 @@
  */
 
 $databaseHost = 'localhost';
-$databaseName = 'receiptstailor_demo';
-$databaseUsername = 'receiptstailor_demo';
-$databasePassword = 'xCV(MrQQRvS5';
+$databaseName = 'receiptstailor';
+$databaseUsername = 'root';
+$databasePassword = '';
 
-$mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName); 
+$mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName);
 
 	
 ?>

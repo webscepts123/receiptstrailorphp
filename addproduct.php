@@ -108,26 +108,20 @@ header("Location: index.php".$qstring);
 
     <h5 class="head5">Add Product</h5>
     
-    <div>
-        
-        
-         <div class="col-md-12 head">
-        <div class="float-right">
-            <a href="javascript:void(0);" class="btn btn-success" onclick="formToggle('importFrm');"><i class="plus"></i> Import</a>
+    <div class="form-row">
+        <div class="col-md-12 head">
+            <div class="float-right">
+                <a href="javascript:void(0);" class="btn btn-success" onclick="formToggle('importFrm');"><i class="plus"></i> Import</a>
+            </div>
         </div>
+        <!-- CSV file upload form -->
+        <div class="col-md-12" id="importFrm" style="display: none;">
+            <form action="importData.php" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" />
+                <input type="submit" class="btn btn-primary" name="importSubmit" value="IMPORT">
+            </form>
+        </div> 
     </div>
-    <!-- CSV file upload form -->
-    <div class="col-md-12" id="importFrm" style="display: none;">
-        <form action="importData.php" method="post" enctype="multipart/form-data">
-            <input type="file" name="file" />
-            <input type="submit" class="btn btn-primary" name="importSubmit" value="IMPORT">
-        </form>
-    </div> 
-    
-    
-    </div>
-    <br>
-    <br>
 	<form action="addproducts.php" method="post" name="form1">
             <div class="form-group">
                 <label>Select Category</label>
