@@ -80,7 +80,7 @@ $singleRow = mysqli_fetch_assoc($result);
         <div class="ticket">
             <img src="assets/newshan.png" alt="Logo">
             <p class="centered">RECEIPT 
-             
+              Telephone : +94 312273904
             <table>
                 <thead>
                     <tr>
