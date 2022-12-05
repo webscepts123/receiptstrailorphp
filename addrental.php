@@ -156,7 +156,7 @@ $(document).ready(function(){
       	<form action="addorderental.php" method="post" name="form1">
             <div class="form-group">
                 <label>ID Number</label>
-                <input  type="nubmer" name="idno" class="form-control" placeholder="">
+                <input  type="nubmer" name="idnumber" class="form-control" placeholder="">
             </div>
             <br>
             
@@ -350,7 +350,7 @@ $(document).ready(function(){
 							<div class="form-group">
 								<label>Total: &nbsp;</label>
 								<div class="input-group">
-									<input value="<?php echo $invoiceValues['order_total_after_tax']; ?>" type="number" class="form-control" name="totalAftertax" id="totalAftertax" placeholder="Total">
+									<input  type="number" class="form-control" name="totalAftertax" id="totalAftertax" placeholder="Total">
 								</div>
 							</div>
 							<br>
@@ -358,7 +358,7 @@ $(document).ready(function(){
 							<div class="form-group">
 								<label>Amount Paid: &nbsp;</label>
 								<div class="input-group">
-									<input value="<?php echo $invoiceValues['order_amount_paid']; ?>" type="number" class="form-control" name="amountPaid" id="amountPaid" placeholder="Amount Paid">
+									<input  type="number" class="form-control" name="amountPaid" id="amountPaid" placeholder="Amount Paid">
 								</div>
 							</div>
 							<br>
@@ -366,7 +366,7 @@ $(document).ready(function(){
 							<div class="form-group">
 								<label>Amount Due: &nbsp;</label>
 								<div class="input-group">
-									<input value="<?php echo $invoiceValues['order_total_amount_due']; ?>" type="number" class="form-control" name="amountDue" id="amountDue" placeholder="Amount Due">
+									<input  type="number" class="form-control" name="amountDue" id="amountDue" placeholder="Amount Due">
 								</div>
 							</div>
 							<br>
