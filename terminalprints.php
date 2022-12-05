@@ -18,7 +18,7 @@ $singleRow = mysqli_fetch_assoc($result);
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Receipt example <?php  ?></title>
+        <title>Receipt  <?php  ?></title>
         <style>
             * {
                  font-size: 12px;
@@ -79,7 +79,7 @@ $singleRow = mysqli_fetch_assoc($result);
     <body>
         <div class="ticket">
             <img src="assets/newshan.png" alt="Logo">
-            <p class="centered">RECEIPT 
+            <p class="centered">RECEIPT <br>
               Telephone : +94 312273904
             <table>
                 <thead>
