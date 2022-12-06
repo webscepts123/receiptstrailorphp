@@ -10,10 +10,14 @@
 
     $result = "UPDATE  rentorders SET id='$id', addtext='$addtext' WHERE id='$id' ";
 
-
     if(!mysqli_query($mysqli, $result)) {
         die('Error: ' . mysqli_error($mysqli));
     }
+
+
+
+    header("Location: viewrentinorder.php");
+
 
    
       
