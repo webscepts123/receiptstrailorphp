@@ -1,34 +1,57 @@
 <?php include 'includes/header.php';?>
 
+
 <?php
 //including the database connection file
 include_once("connection.php");
 
 //fetching data in descending order (lastest entry first)
-$result = mysqli_query($mysqli, "SELECT * FROM rentorders ORDER BY id DESC");
+$result = mysqli_query($mysqli, "SELECT * FROM  textprinter ORDER BY id DESC");
 ?>
+
+
+
+
+
+<div class="container">
+<br><br>
+    <div class="card p-5">
+        <h3>Rent Order</h3>  
+        <br>
+      	<form action="addtextu.php" method="post" name="form1">
+      	    <div class="form-row">
+ 
+     
+                <div class="form-group col-md-6">
+                    <label>Add Text</label>
+                    <input type="text" name="addtext" class="form-control" placeholder="Name">
+                </div>
+            </div>
+          
+          
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input type="submit"class="btn btn-primary" name="Submit" value="Print">
+                </div>
+            </div>
+        </form>
+    </div>
+<br><br>
+</div>
 
 
 <div class="container">
     <br><br>
     <div class="card">
       <div class="card-header">
-        <h3 class="card-title">View Order</h3>
+        <h3 class="card-title">View Order Invoice</h3>
       </div>
       <!-- /.card-header -->
       <div class="card-body">
         <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
           <div class="row">
             <div class="col-sm-12 col-md-9 d-flex align-items-end pb-2">
-              <div class="dt-buttons btn-group flex-wrap">     
-                <button onclick="window.location.href='terminalconfig.php';" class="btn btn-success">Add Printer</button>
-                <button class="btn btn-secondary buttons-copy buttons-html5" tabindex="0" aria-controls="example1" type="button"><span>All</span></button> 
-                <button class="btn btn-secondary buttons-csv buttons-html5" tabindex="0" aria-controls="example1" type="button"><span>Processing</span></button>
-                <button class="btn btn-secondary buttons-excel buttons-html5" tabindex="0" aria-controls="example1" type="button"><span>Completed</span></button>
-                <button class="btn btn-secondary buttons-pdf buttons-html5" tabindex="0" aria-controls="example1" type="button"><span>To Recieve</span></button>
-                <button class="btn btn-secondary buttons-print" tabindex="0" aria-controls="example1" type="button"><span>Print</span></button> <div class="btn-group">
-                <button class="btn btn-secondary buttons-collection dropdown-toggle buttons-colvis" tabindex="0" aria-controls="example1" type="button" aria-haspopup="true"><span>Column visibility</span><span class="dt-down-arrow"></span></button>
-              </div>
+            
            </div>
           </div>
           <div class="col-sm-12 col-md-3">
@@ -43,7 +66,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM rentorders ORDER BY id DESC");
               <thead>
                 <tr>
                   <th class="sorting sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">ID</th>
-                  <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Name</th>
+                  <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Text</th>
 
                   <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Action</th>
                 </tr>
@@ -54,8 +77,9 @@ $result = mysqli_query($mysqli, "SELECT * FROM rentorders ORDER BY id DESC");
 	                {		
 		                echo "<tr class='odd'>";
 		                echo "<td >".$res['id']."</td>";
-		                echo "<td>".$res['customername']."</td>";
-                    echo "<td><a class='btn btn-primary' href=\"invoiceprintp.php?id=$res[id]\">Invoice</a><a class='btn btn-primary' href=\"addtext.php?id=$res[id]\">Add Text</a></td>";
+		                echo "<td>".$res['addtext']."</td>";
+                 
+                    echo "<td><a class='btn btn-primary' href=\"invoiceprintp.php?id=$res[id]\">Invoice</a>  </td>";
 	                } 
                 ?>
               </tbody>
@@ -106,5 +130,5 @@ $result = mysqli_query($mysqli, "SELECT * FROM rentorders ORDER BY id DESC");
     }
   }
 </script>
+  <?php include 'includes/footer.php';?>
 
-<?php include 'includes/footer.php';?>

@@ -5,7 +5,7 @@ include_once("connection.php");
 
 //fetching data in descending order (lastest entry first)
 
-$sql = "SELECT * FROM rentorders WHERE id='" . $_GET["id"] . "'";
+$sql = "SELECT * FROM textprinter WHERE id='" . $_GET["id"] . "'";
 
 $result=mysqli_query($mysqli,$sql);
 $singleRow = mysqli_fetch_assoc($result);
