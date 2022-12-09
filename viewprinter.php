@@ -87,9 +87,8 @@ $result = mysqli_query($mysqli, "SELECT * FROM printer ORDER BY id DESC");
           </div>
         </div>
       </div>
-    </div>
-    <!-- /.card-body -->
-  </div>
+    </div><!-- /.card-body -->
+
 </div>
 
 
